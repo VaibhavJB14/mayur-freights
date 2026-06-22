@@ -55,7 +55,7 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
             <span className="text-2xl font-bold tracking-tight">Mayura Freight</span>
           </div>
           <p className="text-gray-400 mb-8 max-w-sm leading-relaxed">
-            Redefining logistics and export trade in India through cutting-edge technology, superior customer service, and global connectivity.
+            Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.
           </p>
         </div>
 
@@ -72,18 +72,22 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
         <div className="md:col-span-2">
           <h4 className="text-lg font-bold mb-6">Company Values</h4>
           <ul className="space-y-4 text-gray-400 font-medium">
-            <li><span className="hover:text-[#e61919] transition-colors cursor-default">Reliability & Trust</span></li>
-            <li><span className="hover:text-[#e61919] transition-colors cursor-default">Tech Innovation</span></li>
-            <li><span className="hover:text-[#e61919] transition-colors cursor-default">Ethical Integrity</span></li>
-            <li><span className="hover:text-[#e61919] transition-colors cursor-default">Eco-Sustainability</span></li>
+            <li><span className="hover:text-[#e61919] transition-colors cursor-default">Reliability</span></li>
+            <li><span className="hover:text-[#e61919] transition-colors cursor-default">Integrity</span></li>
+            <li><span className="hover:text-[#e61919] transition-colors cursor-default">Innovation</span></li>
+            <li><span className="hover:text-[#e61919] transition-colors cursor-default">Customer Focus</span></li>
+            <li><span className="hover:text-[#e61919] transition-colors cursor-default">Sustainability</span></li>
           </ul>
         </div>
 
         <div className="md:col-span-4">
-          <h4 className="text-lg font-bold mb-6">Email Us</h4>
-          <p className="text-gray-400 mb-6 leading-relaxed">Drop us an email for inquiries, quotes, or logistics support.</p>
-          <a href="mailto:info@mayurtrades.com" className="inline-block bg-[#e61919] hover:bg-white hover:text-[#0a0f16] px-8 py-3 rounded-full font-bold transition-colors shadow-lg shadow-[#e61919]/30">
-            info@mayurtrades.com
+          <h4 className="text-lg font-bold mb-6">Contact Details</h4>
+          <p className="text-gray-400 mb-4 leading-relaxed">For direct enquiries, request a quote, or operational support.</p>
+          <a href="mailto:info@mayurafreight.com" className="inline-block bg-[#e61919] hover:bg-white hover:text-[#0a0f16] px-8 py-3 rounded-full font-bold transition-colors shadow-lg shadow-[#e61919]/30 mb-3 w-full text-center">
+            info@mayurafreight.com
+          </a>
+          <a href="tel:+919900942506" className="inline-block bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-3 rounded-full font-bold transition-colors w-full text-center">
+            +91-9900942506
           </a>
         </div>
       </div>
@@ -129,7 +133,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
               Smarter Transport. <br /> Faster Deliveries. <br /> Global Reach.
             </h1>
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 font-medium leading-relaxed">
-              Experience technology-driven supply chain solutions built for speed, safety, and efficiency. From South Indian freight to seamless global export trading.
+              Experience a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.
             </p>
             <button onClick={() => setCurrentPage('services')} className="bg-white text-[#0a0f16] hover:bg-gray-200 px-8 py-4 rounded-full font-bold transition-all w-fit flex items-center gap-3 cursor-pointer">
               Explore Our Services
@@ -161,15 +165,15 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
             <div className="min-h-[180px] mb-8">
               {activeTab === 'welcome' && (
                 <div className="animate-fade-in">
-                  <p className="text-gray-600 text-lg mb-6 leading-relaxed">With a strong presence across South India, we specialize in end-to-end supply chain management spanning air, sea, and land freight. We connect local businesses to global trade opportunities.</p>
-                  <p className="text-gray-600 text-lg leading-relaxed">We are committed to revolutionizing the industry with state-of-the-art software, offering real-time tracking, AI-driven notifications, and secure digital document management.</p>
+                  <p className="text-gray-600 text-lg mb-6 leading-relaxed">Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p>
                 </div>
               )}
               {activeTab === 'reach' && (
                 <div className="animate-fade-in">
-                  <h3 className="text-2xl font-bold text-[#e61919] mb-4">Our Reach</h3>
-                  <p className="text-gray-600 text-lg mb-4 leading-relaxed">We currently serve the entire South Indian market, connecting businesses with global trade opportunities.</p>
-                  <p className="text-gray-600 text-lg leading-relaxed">Our strategic expansion plans aim to bring our high-quality services to a broader national and international scale.</p>
+                  <h3 className="text-2xl font-bold text-[#e61919] mb-4">Our Reach & Growth Plans</h3>
+                  <p className="text-gray-600 text-lg mb-4 leading-relaxed">Headquartered in South India, Mayura Freight currently serves businesses across Karnataka, Tamil Nadu, Andhra Pradesh, Telangana, and Kerala.</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">With strategic partnerships and an expanding carrier network, we are scaling operations nationally and internationally to become a preferred logistics partner for exporters, importers, and domestic shippers.</p>
                 </div>
               )}
             </div>
@@ -184,18 +188,18 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
           </div>
         </section>
 
-        {/* 3 SERVICES PREVIEW IN CINEMATIC HOVER-REVEAL DESIGN (GRID ANIMATION FIXED) */}
+        {/* 3 SERVICES PREVIEW IN CINEMATIC HOVER-REVEAL DESIGN */}
         <section className="mb-32">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-[#0a0f16] mb-4">Our Core Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">Comprehensive multimodal logistics and trading solutions tailored to your supply chain.</p>
+            <h2 className="text-4xl font-extrabold text-[#0a0f16] mb-4">What We Do</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">Integrated air, ocean, and road freight services, customs clearance, and turnkey solutions.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Ocean Freight', img: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070', desc: 'Cost-effective Full Container Load (FCL) and LCL shipping across major global trade lanes.', icon: <path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /> },
-              { title: 'Air Expedited', img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074', desc: 'Time-critical delivery via scheduled and charter flights for high-value and urgent cargo.', icon: <path d="M17.8 19.2 16 11l3.5-3.5c.8-.8.8-2.1 0-2.9s-2.1-.8-2.9 0L13 8 4.8 6.2c-.5-.1-1 .1-1.3.5l-.3.4c-.4.5-.3 1.2.2 1.5l6.9 3.4-3.4 3.4-2.1-.5c-.4-.1-.8.1-1.1.4l-.3.3c-.3.4-.3 1 .1 1.2l3.7 2 2 3.7c.2.4.8.4 1.2.1l.3-.3c.3-.3.5-.7.4-1.1l-.5-2.1 3.4-3.4 3.4 6.9c.3.5 1 .6 1.5.2l.4-.3c.4-.3.6-.8.5-1.3Z" /> },
-              { title: 'Road Transport', img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070', desc: 'Seamless domestic and cross-border ground transportation utilizing our regional fleet network.', icon: <><path d="M10 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM21 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" /><path d="M14 2H5a2 2 0 0 0-2 2v11h16V7l-5-5ZM3 15h18v-4H3v4Z" /></> }
+              { title: 'Freight Forwarding', img: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070', desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
+              { title: 'Customs Clearance & Compliance', img: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?q=80&w=2070', desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements.', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
+              { title: 'Warehousing & Distribution', img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070', desc: 'Secure, strategically located warehousing, inventory management, pick-and-pack services, and last-mile distribution to support lean supply chains and timely deliveries.', icon: <><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></> }
             ].map((srv, idx) => (
               <div key={idx} onClick={() => setCurrentPage('services')} className="group relative h-[380px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
                 <img src={srv.img} alt={srv.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
@@ -211,7 +215,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
                   <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-in-out">
                     <div className="overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 flex flex-col">
                       <p className="text-gray-300 text-sm leading-relaxed mb-6 mt-3">{srv.desc}</p>
-                      <button className="text-white font-bold text-sm flex items-center gap-2 hover:text-[#e61919] transition-colors uppercase tracking-wider w-fit">
+                      <button className="text-white font-bold text-sm flex items-center gap-2 hover:text-[#e61919] transition-colors uppercase tracking-wider w-fit cursor-pointer">
                         Explore Service <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                       </button>
                     </div>
@@ -228,63 +232,155 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
           </div>
         </section>
 
+        {/* WHY CHOOSE US */}
         <section className="mb-32">
           <div className="bg-[#0a0f16] rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#e61919]/20 rounded-full blur-[100px] pointer-events-none"></div>
             <div className="relative z-10 text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Why Choose Mayura Freight?</h2>
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Why Choose Us</h2>
               <p className="text-gray-400 max-w-2xl mx-auto text-lg">We optimize your entire supply chain with cutting-edge technology and regional expertise.</p>
             </div>
+            
             <div className="relative z-10 grid md:grid-cols-3 gap-8">
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
+                <div className="w-14 h-14 bg-[#e61919] rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Regional Expertise, Global Reach</h3>
+                <p className="text-gray-400 text-sm">Deep understanding of South Indian supply chains combined with an expanding international network to support seamless import/export operations.</p>
+              </div>
               <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
                 <div className="w-14 h-14 bg-[#e61919] rounded-xl flex items-center justify-center mb-6">
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">AI-Powered Tracking</h3>
-                <p className="text-gray-400">State-of-the-art real-time software featuring AI-driven notifications and automated workflows for complete visibility.</p>
+                <h3 className="text-2xl font-bold mb-3">Technology-First Approach</h3>
+                <p className="text-gray-400 text-sm">We are building a real-time logistics platform featuring live shipment tracking, AI-driven notifications, automated workflows, and secure digital document management accessible via web and mobile.</p>
               </div>
               <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
                 <div className="w-14 h-14 bg-[#e61919] rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Unmatched Network</h3>
-                <p className="text-gray-400">Deep roots across the entire South Indian market, seamlessly connecting local businesses with global trade opportunities.</p>
+                <h3 className="text-2xl font-bold mb-3">Reliability & Speed</h3>
+                <p className="text-gray-400 text-sm">Proven operational processes and proactive exception management ensure on-time deliveries and minimal disruption.</p>
               </div>
               <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
                 <div className="w-14 h-14 bg-[#e61919] rounded-xl flex items-center justify-center mb-6">
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Secure & Compliant</h3>
-                <p className="text-gray-400">Hassle-free customs clearance paired with secure digital document management to ensure zero delays at borders.</p>
+                <h3 className="text-2xl font-bold mb-3">Compliance & Transparency</h3>
+                <p className="text-gray-400 text-sm">Strong customs expertise and transparent pricing protect clients from delays and unexpected costs.</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
+                <div className="w-14 h-14 bg-[#e61919] rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Customer-Centric Service</h3>
+                <p className="text-gray-400 text-sm">Tailored logistics plans, dedicated account management, and 24/7 support for critical shipments.</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
+                <div className="w-14 h-14 bg-[#e61919] rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2.69l5.66 4.2c.2.15.34.37.34.61v9c0 .24-.14.46-.34.61L12 21.31l-5.66-4.2a1 1 0 0 1-.34-.61v-9c0-.24.14-.46.34-.61L12 2.69M12 2v20"/></svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Sustainable Practices</h3>
+                <p className="text-gray-400 text-sm">Commitment to eco-friendly transport options and optimized routing to lower carbon footprint.</p>
               </div>
             </div>
           </div>
         </section>
 
+        {/* OUR TECHNOLOGY */}
+        <section className="mb-32">
+          <div className="bg-[#0a0f16] rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl">
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#e61919]/20 rounded-full blur-[100px] pointer-events-none"></div>
+            <div className="relative z-10 text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Our Technology</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto text-lg">Mayura Freight is transforming freight forwarding with a proprietary, cloud-based platform that delivers:</p>
+            </div>
+            
+            <div className="relative z-10 grid md:grid-cols-3 gap-8">
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
+                <h3 className="text-2xl font-bold mb-3">Real-time Tracking</h3>
+                <p className="text-gray-400 text-sm">End-to-end visibility across air, sea, and road shipments.</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
+                <h3 className="text-2xl font-bold mb-3">AI Notifications</h3>
+                <p className="text-gray-400 text-sm">Proactive alerts for milestones, delays, and compliance issues.</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
+                <h3 className="text-2xl font-bold mb-3">Automated Workflows</h3>
+                <p className="text-gray-400 text-sm">Faster booking, documentation, and customs clearance.</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors md:col-span-1">
+                <h3 className="text-2xl font-bold mb-3">Secure Document Management</h3>
+                <p className="text-gray-400 text-sm">Digital bills of lading, invoices, and certificates with role-based access controls.</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors md:col-span-2">
+                <h3 className="text-2xl font-bold mb-3">Mobile & Web Access</h3>
+                <p className="text-gray-400 text-sm">Easy access to shipment data and reporting on desktop and mobile devices.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* INDUSTRIES WE SERVE */}
         <section className="mb-32 text-center">
           <h2 className="text-4xl font-extrabold text-[#0a0f16] mb-4">Industries We Serve</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-12">Providing specialized freight solutions across diverse sectors, including exclusive export handling for raw materials.</p>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-12">We serve all industries, including comprehensive export and import solutions for:</p>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col items-center">
-               <svg className="w-12 h-12 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></svg>
-               <h4 className="font-bold text-[#0a0f16] text-lg">Spices & Sambrani</h4>
-               <p className="text-gray-500 text-sm mt-2">Export Specialists</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-gray-100">
+                 <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974" alt="Agriculture & Food Exports" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+               </div>
+               <div className="p-8 flex flex-col items-center">
+                 <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></svg>
+                 <h4 className="font-bold text-[#0a0f16] text-lg text-center">Agriculture & Food Exports</h4>
+               </div>
             </div>
-            <div className="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col items-center">
-               <svg className="w-12 h-12 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-               <h4 className="font-bold text-[#0a0f16] text-lg">FMCG & Retail</h4>
-               <p className="text-gray-500 text-sm mt-2">Consumer Goods</p>
+            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-gray-100">
+                 <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1950" alt="Retail & E-commerce" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+               </div>
+               <div className="p-8 flex flex-col items-center">
+                 <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                 <h4 className="font-bold text-[#0a0f16] text-lg text-center">Retail & E-commerce</h4>
+               </div>
             </div>
-            <div className="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col items-center">
-               <svg className="w-12 h-12 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
-               <h4 className="font-bold text-[#0a0f16] text-lg">Manufacturing</h4>
-               <p className="text-gray-500 text-sm mt-2">Industrial Cargo</p>
+            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-gray-100">
+                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Manufacturing & Industrial" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+               </div>
+               <div className="p-8 flex flex-col items-center">
+                 <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+                 <h4 className="font-bold text-[#0a0f16] text-lg text-center">Manufacturing & Industrial</h4>
+               </div>
             </div>
-            <div className="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col items-center">
-               <svg className="w-12 h-12 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-               <h4 className="font-bold text-[#0a0f16] text-lg">E-Commerce</h4>
-               <p className="text-gray-500 text-sm mt-2">B2B Distribution</p>
+            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-gray-100">
+                 <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?q=80&w=2070" alt="Pharmaceuticals & Healthcare" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+               </div>
+               <div className="p-8 flex flex-col items-center">
+                 <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="4"/></svg>
+                 <h4 className="font-bold text-[#0a0f16] text-lg text-center">Pharmaceuticals & Healthcare</h4>
+               </div>
+            </div>
+            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-gray-100">
+                 <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?q=80&w=1974" alt="Automotive & Engineering" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+               </div>
+               <div className="p-8 flex flex-col items-center">
+                 <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                 <h4 className="font-bold text-[#0a0f16] text-lg text-center">Automotive & Engineering</h4>
+               </div>
+            </div>
+            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-gray-100">
+                 <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?q=80&w=2070" alt="And every other industry sector" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+               </div>
+               <div className="p-8 flex flex-col items-center">
+                 <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
+                 <h4 className="font-bold text-[#0a0f16] text-lg text-center">And every other industry sector</h4>
+               </div>
             </div>
           </div>
         </section>
@@ -294,7 +390,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
 };
 
 // ==========================================
-// ABOUT PAGE (REVERTED TO STANDARD DESIGN)
+// ABOUT PAGE
 // ==========================================
 const AboutPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => (
   <>
@@ -303,7 +399,7 @@ const AboutPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void 
     </div>
     <InnerPageHeader 
       title="About Mayura Freight" 
-      subtitle="A dynamic and forward-thinking freight forwarding and foreign trading company."
+      subtitle="A dynamic, technology-driven freight forwarding and foreign trading company."
       image="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070"
     />
     <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-24">
@@ -311,10 +407,10 @@ const AboutPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void 
         <div>
           <h2 className="text-4xl font-extrabold text-[#0a0f16] mb-6">Who We Are</h2>
           <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-            Mayura Freight & Trades Pvt Ltd. is dedicated to providing seamless logistics solutions. With a strong presence across South India, we specialize in efficient, cost-effective, and reliable shipping and trading services.
+            Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Our expertise spans air, sea, and land freight, ensuring smooth and timely deliveries for businesses of all scales. We are primarily focused on freight forwarding across various countries, facilitating global trade with seamless logistics solutions.
+            We specialize in integrated air, ocean, and road freight services, customs clearance, warehousing, and export & Import trading. Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.
           </p>
         </div>
         <div className="bg-[#0a0f16] rounded-[2rem] p-10 text-white shadow-2xl relative overflow-hidden">
@@ -322,11 +418,11 @@ const AboutPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void 
           <h3 className="text-2xl font-bold mb-8 relative z-10">Our Core Values</h3>
           <ul className="space-y-6 relative z-10">
             {[
-              { title: 'Reliability', desc: 'Delivering trust through consistent and dependable services.' },
-              { title: 'Innovation', desc: 'Embracing technology to enhance logistics efficiency.' },
-              { title: 'Customer-Centric', desc: 'Prioritizing client needs and providing personalized solutions.' },
-              { title: 'Integrity', desc: 'Upholding transparency and ethical business practices.' },
-              { title: 'Sustainability', desc: 'Promoting eco-friendly logistics solutions.' }
+              { title: 'Reliability', desc: 'Delivering consistent, dependable logistics solutions.' },
+              { title: 'Integrity', desc: 'Transparent pricing and ethical business conduct.' },
+              { title: 'Innovation', desc: 'Continual investment in technology to enhance efficiency.' },
+              { title: 'Customer Focus', desc: 'Tailored solutions and responsive support.' },
+              { title: 'Sustainability', desc: 'Promoting green logistics initiatives across operations.' }
             ].map((v, i) => (
               <li key={i} className="flex gap-4">
                 <div className="mt-1"><svg className="w-5 h-5 text-[#e61919]" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
@@ -335,13 +431,6 @@ const AboutPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void 
             ))}
           </ul>
         </div>
-      </div>
-      
-      <div className="text-center max-w-3xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-[#0a0f16] mb-6">Innovation & Future Outlook</h2>
-        <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-          We are committed to revolutionizing the freight and logistics industry. We are developing state-of-the-art real-time software providing AI-driven notifications, automated workflows, and secure digital document management. We are on a mission to redefine logistics and export trade in India.
-        </p>
       </div>
     </main>
   </>
@@ -353,28 +442,25 @@ const ServicesPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => vo
       <Navbar currentPage="services" setCurrentPage={setCurrentPage} />
     </div>
     <InnerPageHeader 
-      title="Our Services" 
-      subtitle="Comprehensive multimodal logistics and trading solutions tailored to ensure smooth and timely global deliveries."
+      title="What We Do" 
+      subtitle="Comprehensive multimodal integrated freight forwarding, customs clearance, warehousing, and turnkey sourcing solutions."
       image="https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?q=80&w=2070"
     />
     <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-24">
       
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-extrabold text-[#0a0f16] mb-4">Complete Freight & Logistics Network</h2>
+        <h2 className="text-4xl font-extrabold text-[#0a0f16] mb-4">Complete Logistics Network</h2>
         <p className="text-gray-600 max-w-2xl mx-auto text-lg">Hover over any service to explore our end-to-end supply chain management capabilities.</p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { title: 'Ocean Freight', desc: 'Cost-effective Full Container Load (FCL) and Less than Container Load (LCL) shipping across major global trade lanes.', img: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070', icon: <path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /> },
-          { title: 'Air Expedited', desc: 'Time-critical delivery via scheduled and charter flights. Perfect for high-value and urgent cargo requiring maximum security.', img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074', icon: <path d="M17.8 19.2 16 11l3.5-3.5c.8-.8.8-2.1 0-2.9s-2.1-.8-2.9 0L13 8 4.8 6.2c-.5-.1-1 .1-1.3.5l-.3.4c-.4.5-.3 1.2.2 1.5l6.9 3.4-3.4 3.4-2.1-.5c-.4-.1-.8.1-1.1.4l-.3.3c-.3.4-.3 1 .1 1.2l3.7 2 2 3.7c.2.4.8.4 1.2.1l.3-.3c.3-.3.5-.7.4-1.1l-.5-2.1 3.4-3.4 3.4 6.9c.3.5 1 .6 1.5.2l.4-.3c.4-.3.6-.8.5-1.3Z" /> },
-          { title: 'Road Transport', desc: 'Seamless domestic and cross-border ground transportation. Our extensive regional fleet network guarantees reliable transit times.', img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070', icon: <><path d="M10 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM21 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" /><path d="M14 2H5a2 2 0 0 0-2 2v11h16V7l-5-5ZM3 15h18v-4H3v4Z" /></> },
-          { title: 'Custom Clearance', desc: 'Hassle-free and efficient customs processing for seamless trade operations. Our local experts ensure absolute compliance.', img: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?q=80&w=2070', icon: <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /> },
-          { title: 'Warehousing', desc: 'Safe storage and timely distribution of goods across key locations. Fully secured facilities managed by our inventory systems.', img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070', icon: <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /> },
-          { title: 'Cargo Insurance', desc: 'Comprehensive risk management and cargo insurance solutions to protect your valuable shipments financially from origin point to final destination.', img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070', icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/> },
-          { title: 'Supply Consulting', desc: 'Strategic analysis and optimization of your logistics workflows to reduce overall transit costs, minimize bottlenecks, and improve operational efficiency.', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070', icon: <><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="4"/></> },
-          { title: 'Last-Mile Delivery', desc: 'Ensuring safe, accurate, and highly timely final-mile delivery directly to your retail locations, distributors, or end-customers.', img: 'https://images.unsplash.com/photo-1616432043562-3671ea2e5242?q=80&w=2070', icon: <><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></> },
-          { title: 'Export Trading', desc: 'Specializing in the export of high-quality sambrani and spices to global markets, bridging the gap between local producers and international buyers.', img: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070', icon: <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /> }
+          { title: 'Freight Forwarding', desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', img: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
+          { title: 'Customs Clearance & Compliance', desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements across jurisdictions.', img: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?q=80&w=2070', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
+          { title: 'Warehousing & Distribution', desc: 'Secure, strategically located warehousing, inventory management, pick-and-pack services, and last-mile distribution to support lean supply chains and timely deliveries.', img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070', icon: <><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></> },
+          { title: 'End-to-End Logistics Solutions', desc: 'Integrated supply chain management, multimodal transportation planning, vendor coordination, and reverse logistics to reduce lead times and lower total landed cost.', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070', icon: <><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="4"/></> },
+          { title: 'Export Trading', desc: 'Provides comprehensive export services for all product categories, leveraging our direct partnerships with manufacturers in China. We specialize in exporting from India, importing from China and Europe, and connecting global buyers with trusted manufacturers.', img: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070', icon: <><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></> },
+          { title: 'Turnkey Sourcing Solutions', desc: 'We are specialized in the end-to-end process—from sourcing the product to moving it on our own freight. From any product you need, we deliver complete turnkey solutions—from procurement, quality control, and pricing to packaging, documentation, and shipment using our freight capabilities. Our manufacturer network ensures reliable sourcing, competitive pricing, and seamless cross-border trade across India, China, and Europe.', img: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2070', icon: <><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></> },
         ].map((srv, idx) => (
           <div key={idx} onClick={() => setCurrentPage('contact')} className="group relative h-[380px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
             <img src={srv.img} alt={srv.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
@@ -389,8 +475,8 @@ const ServicesPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => vo
               
               <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-in-out">
                 <div className="overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 flex flex-col">
-                  <p className="text-gray-300 text-sm leading-relaxed mb-6 mt-3">{srv.desc}</p>
-                  <button className="text-white font-bold text-sm flex items-center gap-2 hover:text-[#e61919] transition-colors uppercase tracking-wider w-fit cursor-pointer">
+                  <p className="text-gray-300 text-xs leading-relaxed mb-4 mt-3 line-clamp-3">{srv.desc}</p>
+                  <button onClick={(e) => { e.stopPropagation(); setCurrentPage('contact'); }} className="text-white font-bold text-sm flex items-center gap-2 hover:text-[#e61919] transition-colors uppercase tracking-wider w-fit cursor-pointer">
                     Request Quote <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </button>
                 </div>
@@ -419,7 +505,7 @@ const ContactPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => voi
       </div>
       <InnerPageHeader 
         title="Get in Touch" 
-        subtitle="Partner with Mayura Freight & Trades Pvt Ltd. today."
+        subtitle="Partner with Mayura Freight & Trades Pvt Ltd. today for smarter, safer, and faster logistics."
         image="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2075"
       />
       <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-24">
@@ -427,21 +513,22 @@ const ContactPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => voi
           <div className="relative z-10 grid md:grid-cols-2 gap-16">
             <div>
               <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Let's build your supply chain.</h2>
-              <p className="text-gray-300 text-lg mb-12">Whether you need global freight forwarding, reliable customs clearance, or export trading services, our team is ready to assist you.</p>
+              <p className="text-gray-300 text-lg mb-12">Whether you need global freight forwarding, reliable customs clearance, or turnkey sourcing services, our team is ready to assist you.</p>
               
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="bg-[#e61919] p-4 rounded-xl"><svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg></div>
                   <div>
                     <h4 className="text-xl font-bold mb-1">Our Reach</h4>
-                    <p className="text-gray-400">Serving the entire South Indian market, with expansive global connectivity.</p>
+                    <p className="text-gray-400">Serving the entire South Indian market—Karnataka, Tamil Nadu, Andhra Pradesh, Telangana, and Kerala.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="bg-[#e61919] p-4 rounded-xl"><svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
                   <div>
-                    <h4 className="text-xl font-bold mb-1">Email Us</h4>
-                    <p className="text-gray-400">info@mayurtrades.com</p>
+                    <h4 className="text-xl font-bold mb-1">Direct Enquiries</h4>
+                    <p className="text-gray-400">info@mayurafreight.com</p>
+                    <p className="text-gray-400">+91-9900942506</p>
                   </div>
                 </div>
               </div>
