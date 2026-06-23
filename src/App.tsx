@@ -40,7 +40,7 @@ const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, setCurre
             ))}
           </div>
 
-          <div className={`bg-white px-8 rounded-b-[2rem] shadow-2xl flex items-center gap-3 shrink-0 mx-auto md:absolute md:left-1/2 md:-translate-x-1/2 md:top-0 border-b-4 border-[#e61919] cursor-pointer transition-all duration-300 ${scrolled ? 'py-3 md:rounded-b-xl' : 'py-5'}`} onClick={() => setCurrentPage('home')}>
+          <div className={`bg-[#fff7ed] px-8 rounded-b-[2rem] shadow-2xl flex items-center gap-3 shrink-0 mx-auto md:absolute md:left-1/2 md:-translate-x-1/2 md:top-0 border-b-4 border-[#e61919] cursor-pointer transition-all duration-300 ${scrolled ? 'py-3 md:rounded-b-xl' : 'py-5'}`} onClick={() => setCurrentPage('home')}>
             <img src="/logo.png" alt="Mayura Logo" className="w-8 h-8 object-contain" />
             <div>
               <span className="block text-xl font-extrabold text-[#0a0f16] tracking-tight leading-none">Mayura Freight</span>
@@ -67,7 +67,7 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
         <div className="md:col-span-4">
           <div className="flex items-center gap-2 mb-6">
-            <img src="/logo.png" alt="Mayura Logo" className="w-8 h-8 object-contain bg-white rounded p-1" />
+            <img src="/logo.png" alt="Mayura Logo" className="w-8 h-8 object-contain bg-[#fff7ed] rounded p-1" />
             <span className="text-2xl font-bold tracking-tight">Mayura Freight</span>
           </div>
           <p className="text-gray-400 mb-8 max-w-sm leading-relaxed">
@@ -99,7 +99,7 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
         <div className="md:col-span-4">
           <h4 className="text-lg font-bold mb-6">Contact Details</h4>
           <p className="text-gray-400 mb-4 leading-relaxed">For direct enquiries, request a quote, or operational support.</p>
-          <a href="mailto:info@mayurafreight.com" className="inline-block bg-[#e61919] hover:bg-white hover:text-[#0a0f16] px-8 py-3 rounded-full font-bold transition-colors shadow-lg shadow-[#e61919]/30 mb-3 w-full text-center">
+          <a href="mailto:info@mayurafreight.com" className="inline-block bg-[#e61919] hover:bg-[#fff7ed] hover:text-[#0a0f16] px-8 py-3 rounded-full font-bold transition-colors shadow-lg shadow-[#e61919]/30 mb-3 w-full text-center">
             info@mayurafreight.com
           </a>
           <a href="tel:+919900942506" className="inline-block bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-3 rounded-full font-bold transition-colors w-full text-center">
@@ -151,7 +151,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 font-medium leading-relaxed">
               Experience a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.
             </p>
-            <button onClick={() => setCurrentPage('services')} className="bg-white text-[#0a0f16] hover:bg-gray-200 px-8 py-4 rounded-full font-bold transition-all w-fit flex items-center gap-3 cursor-pointer">
+            <button onClick={() => setCurrentPage('services')} className="bg-[#fff7ed] text-[#0a0f16] hover:bg-gray-200 px-8 py-4 rounded-full font-bold transition-all w-fit flex items-center gap-3 cursor-pointer">
               Explore Our Services
               <span className="bg-[#0a0f16] text-white rounded-full p-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
             </button>
@@ -344,8 +344,8 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
           <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-12">We serve all industries, including comprehensive export and import solutions for:</p>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
-               <div className="h-40 w-full overflow-hidden bg-gray-100">
+            <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-[#ffecd6]">
                  <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974" alt="Agriculture & Food Exports" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                </div>
                <div className="p-8 flex flex-col items-center">
@@ -353,8 +353,8 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
                  <h4 className="font-bold text-[#0a0f16] text-lg text-center">Agriculture & Food Exports</h4>
                </div>
             </div>
-            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
-               <div className="h-40 w-full overflow-hidden bg-gray-100">
+            <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-[#ffecd6]">
                  <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1950" alt="Retail & E-commerce" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                </div>
                <div className="p-8 flex flex-col items-center">
@@ -362,8 +362,8 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
                  <h4 className="font-bold text-[#0a0f16] text-lg text-center">Retail & E-commerce</h4>
                </div>
             </div>
-            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
-               <div className="h-40 w-full overflow-hidden bg-gray-100">
+            <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-[#ffecd6]">
                  <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Manufacturing & Industrial" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                </div>
                <div className="p-8 flex flex-col items-center">
@@ -371,8 +371,8 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
                  <h4 className="font-bold text-[#0a0f16] text-lg text-center">Manufacturing & Industrial</h4>
                </div>
             </div>
-            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
-               <div className="h-40 w-full overflow-hidden bg-gray-100">
+            <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-[#ffecd6]">
                  <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?q=80&w=2070" alt="Pharmaceuticals & Healthcare" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                </div>
                <div className="p-8 flex flex-col items-center">
@@ -380,8 +380,8 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
                  <h4 className="font-bold text-[#0a0f16] text-lg text-center">Pharmaceuticals & Healthcare</h4>
                </div>
             </div>
-            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
-               <div className="h-40 w-full overflow-hidden bg-gray-100">
+            <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-[#ffecd6]">
                  <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?q=80&w=1974" alt="Automotive & Engineering" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                </div>
                <div className="p-8 flex flex-col items-center">
@@ -389,8 +389,8 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
                  <h4 className="font-bold text-[#0a0f16] text-lg text-center">Automotive & Engineering</h4>
                </div>
             </div>
-            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
-               <div className="h-40 w-full overflow-hidden bg-gray-100">
+            <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-[#ffecd6]">
                  <img src="/industry.jpg" alt="And every other industry sector" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                </div>
                <div className="p-8 flex flex-col items-center">
@@ -578,7 +578,7 @@ function App() {
   }, [currentPage]);
 
   return (
-    <div className="min-h-screen bg-[#f4f6f8] flex flex-col font-sans selection:bg-[#e61919] selection:text-white">
+    <div className="min-h-screen bg-[#fff7ed] flex flex-col font-sans selection:bg-[#e61919] selection:text-white">
       {currentPage === 'home' && <HomePage setCurrentPage={setCurrentPage} />}
       {currentPage === 'about' && <AboutPage setCurrentPage={setCurrentPage} />}
       {currentPage === 'services' && <ServicesPage setCurrentPage={setCurrentPage} />}
