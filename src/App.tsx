@@ -4,43 +4,62 @@ import React, { useState, useEffect } from 'react';
 // SHARED COMPONENTS
 // ==========================================
 
-const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, setCurrentPage: (page: string) => void }) => (
-  <nav className="relative z-50 flex flex-col md:flex-row items-center justify-between px-8 w-full max-w-screen-2xl mx-auto pt-4">
-    <div className="hidden md:flex bg-white/10 backdrop-blur-md p-1.5 rounded-full items-center gap-2 mt-6 border border-white/10">
-      {['home', 'about', 'services', 'contact'].map((page) => (
-        <button 
-          key={page}
-          onClick={() => setCurrentPage(page)}
-          className={`capitalize px-5 py-2.5 rounded-full text-sm font-semibold transition-colors ${
-            currentPage === page 
-              ? 'bg-[#e61919] text-white shadow-lg' 
-              : 'text-white/80 hover:text-white'
-          }`}
-        >
-          {page === 'about' ? 'About Us' : page}
-        </button>
-      ))}
-    </div>
+const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, setCurrentPage: (page: string) => void }) => {
+  const [scrolled, setScrolled] = useState(false);
 
-    <div className="bg-white px-8 py-5 rounded-b-[2rem] shadow-2xl flex items-center gap-3 shrink-0 mx-auto md:absolute md:left-1/2 md:-translate-x-1/2 md:top-0 border-b-4 border-[#e61919] cursor-pointer" onClick={() => setCurrentPage('home')}>
-      <svg className="w-8 h-8 text-[#e61919]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-        <path d="M10 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM21 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
-        <path d="M14 2H5a2 2 0 0 0-2 2v11h16V7l-5-5ZM3 15h18v-4H3v4Z" />
-      </svg>
-      <div>
-        <span className="block text-xl font-extrabold text-[#0a0f16] tracking-tight leading-none">Mayura Freight</span>
-        <span className="block text-[10px] font-bold text-gray-500 tracking-widest uppercase mt-1">& Trades Pvt Ltd</span>
+  // This hook listens for scrolling to toggle the sticky navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <>
+      {/* Invisible spacer to prevent the page from jumping when the navbar becomes fixed */}
+      {scrolled && <div className="h-[100px] w-full hidden md:block invisible" />}
+      
+      <div className={`w-full z-[100] transition-all duration-300 ${scrolled ? 'fixed top-0 left-0 right-0 bg-[#0a0f16]/95 backdrop-blur-md shadow-2xl py-2 border-b border-white/5' : 'relative pt-4'}`}>
+        <nav className="relative flex flex-col md:flex-row items-center justify-between px-8 w-full max-w-screen-2xl mx-auto">
+          
+          <div className={`hidden md:flex bg-white/10 backdrop-blur-md p-1.5 rounded-full items-center gap-2 border border-white/10 transition-all duration-300 ${scrolled ? 'mt-0' : 'mt-6'}`}>
+            {['home', 'about', 'services', 'contact'].map((page) => (
+              <button 
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`capitalize px-5 py-2.5 rounded-full text-sm font-semibold transition-colors ${
+                  currentPage === page 
+                    ? 'bg-[#e61919] text-white shadow-lg' 
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                {page === 'about' ? 'About Us' : page}
+              </button>
+            ))}
+          </div>
+
+          <div className={`bg-white px-8 rounded-b-[2rem] shadow-2xl flex items-center gap-3 shrink-0 mx-auto md:absolute md:left-1/2 md:-translate-x-1/2 md:top-0 border-b-4 border-[#e61919] cursor-pointer transition-all duration-300 ${scrolled ? 'py-3 md:rounded-b-xl' : 'py-5'}`} onClick={() => setCurrentPage('home')}>
+            <img src="/logo.png" alt="Mayura Logo" className="w-8 h-8 object-contain" />
+            <div>
+              <span className="block text-xl font-extrabold text-[#0a0f16] tracking-tight leading-none">Mayura Freight</span>
+              <span className="block text-[10px] font-bold text-gray-500 tracking-widest uppercase mt-1">& Trades Pvt Ltd</span>
+            </div>
+          </div>
+
+          <div className={`hidden md:flex items-center gap-3 transition-all duration-300 ${scrolled ? 'mt-0' : 'mt-6'}`}>
+            <button onClick={() => setCurrentPage('contact')} className="bg-[#e61919] text-white px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg shadow-[#e61919]/30 hover:bg-red-700 transition-colors">
+              Get in touch
+              <svg className="w-4 h-4 bg-white/20 rounded-full p-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+        </nav>
       </div>
-    </div>
-
-    <div className="hidden md:flex items-center gap-3 mt-6">
-      <button onClick={() => setCurrentPage('contact')} className="bg-[#e61919] text-white px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg shadow-[#e61919]/30 hover:bg-red-700 transition-colors">
-        Get in touch
-        <svg className="w-4 h-4 bg-white/20 rounded-full p-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
-  </nav>
-);
+    </>
+  );
+};
 
 const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => (
   <footer className="bg-[#0a0f16] text-white pt-20 pb-10 px-8 border-t-4 border-[#e61919] w-full mt-auto">
@@ -48,10 +67,7 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
         <div className="md:col-span-4">
           <div className="flex items-center gap-2 mb-6">
-            <svg className="w-8 h-8 text-[#e61919]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path d="M10 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM21 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
-              <path d="M14 2H5a2 2 0 0 0-2 2v11h16V7l-5-5ZM3 15h18v-4H3v4Z" />
-            </svg>
+            <img src="/logo.png" alt="Mayura Logo" className="w-8 h-8 object-contain bg-white rounded p-1" />
             <span className="text-2xl font-bold tracking-tight">Mayura Freight</span>
           </div>
           <p className="text-gray-400 mb-8 max-w-sm leading-relaxed">
@@ -198,7 +214,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: 'Freight Forwarding', img: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070', desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
-              { title: 'Customs Clearance & Compliance', img: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?q=80&w=2070', desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements.', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
+              { title: 'Customs Clearance & Compliance', img: '/customs.jpg', desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements.', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
               { title: 'Warehousing & Distribution', img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070', desc: 'Secure, strategically located warehousing, inventory management, pick-and-pack services, and last-mile distribution to support lean supply chains and timely deliveries.', icon: <><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></> }
             ].map((srv, idx) => (
               <div key={idx} onClick={() => setCurrentPage('services')} className="group relative h-[380px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
@@ -375,7 +391,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
             </div>
             <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
                <div className="h-40 w-full overflow-hidden bg-gray-100">
-                 <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?q=80&w=2070" alt="And every other industry sector" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                 <img src="/industry.jpg" alt="And every other industry sector" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                </div>
                <div className="p-8 flex flex-col items-center">
                  <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
@@ -456,7 +472,7 @@ const ServicesPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => vo
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
           { title: 'Freight Forwarding', desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', img: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
-          { title: 'Customs Clearance & Compliance', desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements across jurisdictions.', img: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?q=80&w=2070', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
+          { title: 'Customs Clearance & Compliance', desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements across jurisdictions.', img: '/customs.jpg', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
           { title: 'Warehousing & Distribution', desc: 'Secure, strategically located warehousing, inventory management, pick-and-pack services, and last-mile distribution to support lean supply chains and timely deliveries.', img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070', icon: <><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></> },
           { title: 'End-to-End Logistics Solutions', desc: 'Integrated supply chain management, multimodal transportation planning, vendor coordination, and reverse logistics to reduce lead times and lower total landed cost.', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070', icon: <><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="4"/></> },
           { title: 'Export Trading', desc: 'Provides comprehensive export services for all product categories, leveraging our direct partnerships with manufacturers in China. We specialize in exporting from India, importing from China and Europe, and connecting global buyers with trusted manufacturers.', img: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070', icon: <><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></> },
