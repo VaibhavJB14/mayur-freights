@@ -167,8 +167,8 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
           
           <div className="relative z-10 flex flex-col justify-center flex-grow px-8 md:px-16 max-w-screen-2xl mx-auto w-full pt-12 md:pt-0">
             <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] max-w-3xl mb-6">
-              Smarter Transport. <br /> Faster Deliveries. <br /> Global Reach.
-            </h1>
+              Moving Cargo. <br /> Connecting Markets. <br /> Delivering Trust.
+            </h1>  
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 font-medium leading-relaxed">
               Experience a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.
             </p>
