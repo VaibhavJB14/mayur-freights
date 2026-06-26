@@ -365,13 +365,13 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
           <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-12">We serve all industries, including comprehensive export and import solutions for:</p>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+           <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
                <div className="h-40 w-full overflow-hidden bg-[#ffecd6]">
-                 <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974" alt="Agriculture & Food Exports" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Manufacturing & Industrial" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                </div>
                <div className="p-8 flex flex-col items-center">
-                 <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></svg>
-                 <h4 className="font-bold text-[#0a0f16] text-lg text-center">Agriculture & Food Exports</h4>
+                 <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+                 <h4 className="font-bold text-[#0a0f16] text-lg text-center">Manufacturing & Industrial</h4>
                </div>
             </div>
             <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
@@ -383,15 +383,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
                  <h4 className="font-bold text-[#0a0f16] text-lg text-center">Retail & E-commerce</h4>
                </div>
             </div>
-            <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
-               <div className="h-40 w-full overflow-hidden bg-[#ffecd6]">
-                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Manufacturing & Industrial" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-               </div>
-               <div className="p-8 flex flex-col items-center">
-                 <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
-                 <h4 className="font-bold text-[#0a0f16] text-lg text-center">Manufacturing & Industrial</h4>
-               </div>
-            </div>
+            
             <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
                <div className="h-40 w-full overflow-hidden bg-[#ffecd6]">
                  <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?q=80&w=2070" alt="Pharmaceuticals & Healthcare" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -417,6 +409,15 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
                <div className="p-8 flex flex-col items-center">
                  <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
                  <h4 className="font-bold text-[#0a0f16] text-lg text-center">And every other industry sector</h4>
+               </div>
+            </div>
+             <div className="bg-[#fff7ed] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#e61919] hover:-translate-y-2 transition-all flex flex-col group">
+               <div className="h-40 w-full overflow-hidden bg-[#ffecd6]">
+                 <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974" alt="Agriculture & Food Exports" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+               </div>
+               <div className="p-8 flex flex-col items-center">
+                 <svg className="w-10 h-10 text-[#e61919] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></svg>
+                 <h4 className="font-bold text-[#0a0f16] text-lg text-center">Agriculture & Food Exports</h4>
                </div>
             </div>
           </div>
