@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
 // ==========================================
+// TYPES & INTERFACES
+// ==========================================
+interface PageProps {
+  setCurrentPage: (page: string) => void;
+}
+
+interface NavProps extends PageProps {
+  currentPage: string;
+}
+
+// ==========================================
 // SHARED COMPONENTS
 // ==========================================
 
-const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, setCurrentPage: (page: string) => void }) => {
+const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
   const [scrolled, setScrolled] = useState(false);
 
-  // This hook listens for scrolling to toggle the sticky navbar
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -18,37 +28,35 @@ const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, setCurre
 
   return (
     <>
-      {/* Invisible spacer to prevent the page from jumping when the navbar becomes fixed */}
       {scrolled && <div className="h-[100px] w-full hidden md:block invisible" />}
       
       <div className={`w-full z-[100] transition-all duration-300 ${scrolled ? 'fixed top-0 left-0 right-0 bg-[#0a0f16]/95 backdrop-blur-md shadow-2xl py-2 border-b border-white/5' : 'relative pt-4'}`}>
         <nav className="relative flex flex-col md:flex-row items-center justify-between px-8 w-full max-w-screen-2xl mx-auto">
           
-          <div className={`hidden md:flex bg-white/10 backdrop-blur-md p-1.5 rounded-full items-center gap-2 border border-white/10 transition-all duration-300 ${scrolled ? 'mt-0' : 'mt-6'}`}>
-            {['home', 'about', 'services', 'contact'].map((page) => (
-              <button 
-                key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`capitalize px-5 py-2.5 rounded-full text-sm font-semibold transition-colors ${
-                  currentPage === page 
-                    ? 'bg-[#e61919] text-white shadow-lg' 
-                    : 'text-white/80 hover:text-white'
-                }`}
-              >
-                {page === 'about' ? 'About Us' : page}
-              </button>
-            ))}
+          <div className={`bg-[#fff7ed] px-6 rounded-b-[2rem] shadow-2xl flex items-center gap-3 shrink-0 border-b-4 border-[#e61919] cursor-pointer transition-all duration-300 self-start ${scrolled ? 'py-3 md:rounded-b-xl' : 'py-5'}`} onClick={() => setCurrentPage('home')}>
+            <img src="/logo.png" alt="Mayura Logo" className="w-8 h-8 object-contain" />
+            <span className="text-xl md:text-2xl font-extrabold text-[#0a0f16] tracking-tight whitespace-nowrap">Mayura Freight & Trades Pvt Ltd</span>
           </div>
 
-          <div className={`bg-[#fff7ed] px-8 rounded-b-[2rem] shadow-2xl flex items-center gap-3 shrink-0 mx-auto md:absolute md:left-1/2 md:-translate-x-1/2 md:top-0 border-b-4 border-[#e61919] cursor-pointer transition-all duration-300 ${scrolled ? 'py-3 md:rounded-b-xl' : 'py-5'}`} onClick={() => setCurrentPage('home')}>
-            <img src="/logo.png" alt="Mayura Logo" className="w-8 h-8 object-contain" />
-            <div>
-              <span className="block text-xl font-extrabold text-[#0a0f16] tracking-tight leading-none">Mayura Freight</span>
-              <span className="block text-[10px] font-bold text-gray-500 tracking-widest uppercase mt-1">& Trades Pvt Ltd</span>
+          <div className="hidden md:flex flex-1 justify-center">
+            <div className="bg-white/10 backdrop-blur-md p-1.5 rounded-full flex items-center gap-2 border border-white/10 transition-all duration-300">
+              {['home', 'about', 'services', 'contact'].map((page) => (
+                <button 
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`capitalize px-5 py-2.5 rounded-full text-sm font-semibold transition-colors ${
+                    currentPage === page 
+                      ? 'bg-[#e61919] text-white shadow-lg' 
+                      : 'text-white/80 hover:text-white'
+                  }`}
+                >
+                  {page === 'about' ? 'About Us' : page}
+                </button>
+              ))}
             </div>
           </div>
 
-          <div className={`hidden md:flex items-center gap-3 transition-all duration-300 ${scrolled ? 'mt-0' : 'mt-6'}`}>
+          <div className="hidden md:flex items-center shrink-0">
             <button onClick={() => setCurrentPage('contact')} className="bg-[#e61919] text-white px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg shadow-[#e61919]/30 hover:bg-red-700 transition-colors">
               Get in touch
               <svg className="w-4 h-4 bg-white/20 rounded-full p-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -61,7 +69,7 @@ const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, setCurre
   );
 };
 
-const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => (
+const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
   <footer className="bg-[#0a0f16] text-white pt-20 pb-10 px-8 border-t-4 border-[#e61919] w-full mt-auto">
     <div className="max-w-screen-xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
@@ -70,9 +78,22 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
             <img src="/logo.png" alt="Mayura Logo" className="w-8 h-8 object-contain bg-[#fff7ed] rounded p-1" />
             <span className="text-2xl font-bold tracking-tight">Mayura Freight</span>
           </div>
-          <p className="text-gray-400 mb-8 max-w-sm leading-relaxed">
-            Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.
-          </p>
+          
+          {/* UPDATED: Removed description paragraph, added Social Icons */}
+          <div className="flex items-center gap-4 mt-2">
+            <a href="#" className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-[#e61919] hover:border-[#e61919] hover:-translate-y-1 transition-all duration-300 group" aria-label="Instagram">
+              <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-[#e61919] hover:border-[#e61919] hover:-translate-y-1 transition-all duration-300 group" aria-label="Facebook">
+              <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-[#e61919] hover:border-[#e61919] hover:-translate-y-1 transition-all duration-300 group" aria-label="LinkedIn">
+              <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-[#e61919] hover:border-[#e61919] hover:-translate-y-1 transition-all duration-300 group" aria-label="Twitter">
+              <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5 0.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+          </div>
         </div>
 
         <div className="md:col-span-2">
@@ -131,7 +152,7 @@ const InnerPageHeader = ({ title, subtitle, image }: { title: string, subtitle: 
 // PAGE COMPONENTS
 // ==========================================
 
-const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => {
+const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
   const [activeTab, setActiveTab] = useState('welcome'); 
   return (
     <>
@@ -213,11 +234,11 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Freight Forwarding', img: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070', desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
-              { title: 'Customs Clearance & Compliance', img: '/customs.jpg', desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements.', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
+              { title: 'Freight Forwarding', img: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070', desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
+              { title: 'Customs Clearance & Compliance', img: '/customs.jpg', desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements across jurisdictions.', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
               { title: 'Warehousing & Distribution', img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070', desc: 'Secure, strategically located warehousing, inventory management, pick-and-pack services, and last-mile distribution to support lean supply chains and timely deliveries.', icon: <><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></> }
             ].map((srv, idx) => (
-              <div key={idx} onClick={() => setCurrentPage('services')} className="group relative h-[380px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
+              <div key={idx} onClick={() => setCurrentPage('contact')} className="group relative h-[480px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
                 <img src={srv.img} alt={srv.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f16] via-[#0a0f16]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-[#e61919]/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -230,9 +251,9 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
                   
                   <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-in-out">
                     <div className="overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 flex flex-col">
-                      <p className="text-gray-300 text-sm leading-relaxed mb-6 mt-3">{srv.desc}</p>
-                      <button className="text-white font-bold text-sm flex items-center gap-2 hover:text-[#e61919] transition-colors uppercase tracking-wider w-fit cursor-pointer">
-                        Explore Service <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                      <p className="text-gray-300 text-xs leading-relaxed mb-6 mt-3">{srv.desc}</p>
+                      <button onClick={(e) => { e.stopPropagation(); setCurrentPage('contact'); }} className="text-white font-bold text-sm flex items-center gap-2 hover:text-[#e61919] transition-colors uppercase tracking-wider w-fit cursor-pointer">
+                        Request Quote <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                       </button>
                     </div>
                   </div>
@@ -295,7 +316,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
               </div>
               <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
                 <div className="w-14 h-14 bg-[#e61919] rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2.69l5.66 4.2c.2.15.34.37.34.61v9c0 .24-.14.46-.34.61L12 21.31l-5.66-4.2a1 1 0 0 1-.34-.61v-9c0-.24.14-.46.34-.61L12 2.69M12 2v20"/></svg>
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2.69l5.66 4.2c.2.15.34.37.34.61v9c0 .24-.14.46-.34.61L12 2.69M12 2v20"/></svg>
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Sustainable Practices</h3>
                 <p className="text-gray-400 text-sm">Commitment to eco-friendly transport options and optimized routing to lower carbon footprint.</p>
@@ -408,7 +429,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }
 // ==========================================
 // ABOUT PAGE
 // ==========================================
-const AboutPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => (
+const AboutPage: React.FC<PageProps> = ({ setCurrentPage }) => (
   <>
     <div className="absolute top-0 w-full z-50">
       <Navbar currentPage="about" setCurrentPage={setCurrentPage} />
@@ -452,7 +473,7 @@ const AboutPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void 
   </>
 );
 
-const ServicesPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => (
+const ServicesPage: React.FC<PageProps> = ({ setCurrentPage }) => (
   <>
     <div className="absolute top-0 w-full z-50">
       <Navbar currentPage="services" setCurrentPage={setCurrentPage} />
@@ -478,7 +499,7 @@ const ServicesPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => vo
           { title: 'Export Trading', desc: 'Provides comprehensive export services for all product categories, leveraging our direct partnerships with manufacturers in China. We specialize in exporting from India, importing from China and Europe, and connecting global buyers with trusted manufacturers.', img: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070', icon: <><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></> },
           { title: 'Turnkey Sourcing Solutions', desc: 'We are specialized in the end-to-end process—from sourcing the product to moving it on our own freight. From any product you need, we deliver complete turnkey solutions—from procurement, quality control, and pricing to packaging, documentation, and shipment using our freight capabilities. Our manufacturer network ensures reliable sourcing, competitive pricing, and seamless cross-border trade across India, China, and Europe.', img: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2070', icon: <><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></> },
         ].map((srv, idx) => (
-          <div key={idx} onClick={() => setCurrentPage('contact')} className="group relative h-[380px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
+          <div key={idx} onClick={() => setCurrentPage('contact')} className="group relative h-[480px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
             <img src={srv.img} alt={srv.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f16] via-[#0a0f16]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="absolute inset-0 bg-[#e61919]/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -491,7 +512,7 @@ const ServicesPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => vo
               
               <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-in-out">
                 <div className="overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 flex flex-col">
-                  <p className="text-gray-300 text-xs leading-relaxed mb-4 mt-3 line-clamp-3">{srv.desc}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-6 mt-3">{srv.desc}</p>
                   <button onClick={(e) => { e.stopPropagation(); setCurrentPage('contact'); }} className="text-white font-bold text-sm flex items-center gap-2 hover:text-[#e61919] transition-colors uppercase tracking-wider w-fit cursor-pointer">
                     Request Quote <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </button>
@@ -506,7 +527,7 @@ const ServicesPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => vo
   </>
 );
 
-const ContactPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => {
+const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -524,14 +545,16 @@ const ContactPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => voi
         subtitle="Partner with Mayura Freight & Trades Pvt Ltd. today for smarter, safer, and faster logistics."
         image="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2075"
       />
-      <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-24">
+      <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-24 space-y-16">
+        
         <div className="bg-[#0a0f16] text-white rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
           <div className="relative z-10 grid md:grid-cols-2 gap-16">
-            <div>
+            
+            <div className="flex flex-col h-full">
               <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Let's build your supply chain.</h2>
               <p className="text-gray-300 text-lg mb-12">Whether you need global freight forwarding, reliable customs clearance, or turnkey sourcing services, our team is ready to assist you.</p>
               
-              <div className="space-y-8">
+              <div className="space-y-8 mb-16">
                 <div className="flex items-start gap-4">
                   <div className="bg-[#e61919] p-4 rounded-xl"><svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg></div>
                   <div>
@@ -548,9 +571,10 @@ const ContactPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => voi
                   </div>
                 </div>
               </div>
+
             </div>
             
-            <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10">
+            <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 h-fit z-20 relative">
               <div className="space-y-4">
                 <input type="text" placeholder="Your Name / Company" required className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-4 text-white placeholder:text-gray-400 focus:outline-none focus:border-[#e61919] focus:ring-1 focus:ring-[#e61919]" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
                 <input type="email" placeholder="Work Email" required className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-4 text-white placeholder:text-gray-400 focus:outline-none focus:border-[#e61919] focus:ring-1 focus:ring-[#e61919]" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
@@ -558,17 +582,15 @@ const ContactPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => voi
                 <button type="submit" className="w-full bg-[#e61919] hover:bg-red-700 text-white font-bold py-4 rounded-xl transition-colors cursor-pointer shadow-lg shadow-[#e61919]/30">Submit Inquiry</button>
               </div>
             </form>
+
           </div>
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[600px] h-[600px] bg-[#e61919]/20 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[600px] h-[600px] bg-[#e61919]/10 rounded-full blur-[120px] pointer-events-none"></div>
         </div>
+
       </main>
     </>
   );
 };
-
-// ==========================================
-// MAIN APP COMPONENT
-// ==========================================
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
