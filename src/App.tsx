@@ -110,7 +110,7 @@ const IntroOverlay = ({ onComplete }: { onComplete: () => void }) => {
           <img
             src="/logo.png"
             alt="Mayura Logo"
-            className="w-32 h-32 md:w-40 md:h-40 object-contain brightness-0 invert mb-6 drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+            className="w-32 h-32 md:w-40 md:h-40 object-contain  mb-6 drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]"
           />
           <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
             Mayura Freight
@@ -207,7 +207,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
         <nav className="relative flex flex-col md:flex-row items-center justify-between px-8 w-full max-w-screen-2xl mx-auto">
 
           <div className={`bg-[#023859] px-6 rounded-b-[2rem] shadow-2xl flex items-center gap-3 shrink-0 border-b-4 border-[#D4AF37] cursor-pointer transition-all duration-300 self-start ${scrolled ? 'py-3 md:rounded-b-xl' : 'py-5'}`} onClick={() => setCurrentPage('home')}>
-            <img src="/logo.png" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain brightness-0 invert" />
+            <img src="/logo.png" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 " />
             <span className="text-xl md:text-2xl font-extrabold text-white tracking-tight whitespace-nowrap font-heading">Mayura Freight & Trades Pvt Ltd</span>
           </div>
 
