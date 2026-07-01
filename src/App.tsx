@@ -193,6 +193,7 @@ const ImageSlider = ({ images, title, delay = 0 }: { images: string[]; title: st
 
 const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -202,30 +203,57 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About Us' },
+    { id: 'services', label: 'Services' },
+    { id: 'contact', label: 'Contact' }
+  ];
+
   return (
     <>
       {scrolled && <div className="h-[100px] w-full hidden md:block invisible" />}
 
       <div className={`w-full z-[100] transition-all duration-300 ${scrolled ? 'fixed top-0 left-0 right-0 bg-[#011C40]/95 backdrop-blur-md shadow-2xl py-2 border-b border-[#26658C]/50' : 'relative pt-4'}`}>
-        <nav className="relative flex flex-col md:flex-row items-center justify-between px-8 w-full max-w-screen-2xl mx-auto">
+        <nav className="relative flex flex-col md:flex-row items-center justify-between px-4 sm:px-8 w-full max-w-screen-2xl mx-auto">
 
-          <div className={`bg-[#023859] px-6 rounded-b-[2rem] shadow-2xl flex items-center gap-3 shrink-0 border-b-4 border-[#D4AF37] cursor-pointer transition-all duration-300 self-start ${scrolled ? 'py-3 md:rounded-b-xl' : 'py-5'}`} onClick={() => setCurrentPage('home')}>
-            <img src="/logo.png" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 " />
-            <span className="text-xl md:text-2xl font-extrabold text-white tracking-tight whitespace-nowrap font-heading">Mayura Freight & Trades Pvt Ltd</span>
+          <div className="flex items-center justify-between w-full md:w-auto">
+            <div className={`bg-[#023859] px-4 sm:px-6 rounded-b-[1.5rem] md:rounded-b-[2rem] shadow-2xl flex items-center gap-3 shrink-0 border-b-4 border-[#D4AF37] cursor-pointer transition-all duration-300 ${scrolled ? 'py-2.5 md:py-3 md:rounded-b-xl' : 'py-4 sm:py-5'}`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
+              <img src="/logo.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" />
+              <span className="text-sm sm:text-base md:text-2xl font-extrabold text-white tracking-tight font-heading leading-tight">Mayura Freight</span>
+            </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex md:hidden text-[#A7EBF2]/80 hover:text-white p-2 rounded-xl border border-[#26658C]/50 bg-white/5 backdrop-blur-sm transition-all"
+              aria-label="Toggle Menu"
+            >
+              {menuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
 
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex flex-1 justify-center">
             <div className="bg-white/10 backdrop-blur-md p-1.5 rounded-full flex items-center gap-2 border border-[#26658C]/50 transition-all duration-300">
-              {['home', 'about', 'services', 'contact'].map((page) => (
+              {navItems.map((item) => (
                 <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`capitalize px-5 py-2.5 rounded-full text-sm font-semibold transition-colors ${currentPage === page
+                  key={item.id}
+                  onClick={() => setCurrentPage(item.id)}
+                  className={`capitalize px-5 py-2.5 rounded-full text-sm font-semibold transition-colors ${currentPage === item.id
                     ? 'bg-[#D4AF37] text-[#011C40] shadow-[0_0_15px_rgba(212,175,55,0.4)]'
                     : 'text-[#A7EBF2]/80 hover:text-white hover:bg-[#26658C]/50'
                     }`}
                 >
-                  {page === 'about' ? 'About Us' : page}
+                  {item.label}
                 </button>
               ))}
             </div>
@@ -237,6 +265,37 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
               <svg className="w-4 h-4 bg-[#011C40]/20 rounded-full p-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </button>
           </div>
+
+          {/* Mobile responsive dropdown drawer */}
+          <div className={`w-full md:hidden transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-[300px] opacity-100 mt-4' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+            <div className="bg-[#011C40]/95 backdrop-blur-md rounded-2xl p-4 border border-[#26658C]/50 flex flex-col gap-2 shadow-2xl">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setCurrentPage(item.id);
+                    setMenuOpen(false);
+                  }}
+                  className={`w-full text-left px-5 py-3 rounded-xl text-sm font-semibold transition-all ${currentPage === item.id
+                    ? 'bg-[#D4AF37] text-[#011C40]'
+                    : 'text-[#A7EBF2]/90 hover:text-white hover:bg-[#26658C]/30'
+                    }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+              <button
+                onClick={() => {
+                  setCurrentPage('contact');
+                  setMenuOpen(false);
+                }}
+                className="w-full bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] px-5 py-3 rounded-xl text-sm font-bold text-center mt-2 shadow-[0_0_15px_rgba(212,175,55,0.2)]"
+              >
+                Get in touch
+              </button>
+            </div>
+          </div>
+
         </nav>
       </div>
     </>
@@ -506,14 +565,14 @@ const AboutPage: React.FC<PageProps> = ({ setCurrentPage }) => (
   <>
     <div className="absolute top-0 w-full z-50"><Navbar currentPage="about" setCurrentPage={setCurrentPage} /></div>
     <InnerPageHeader title="About Mayura Freight" subtitle="A dynamic, technology-driven freight forwarding and foreign trading company." image="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070" />
-    <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-24">
-      <div className="grid md:grid-cols-2 gap-16 mb-24">
+    <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-16 md:mb-24">
         <div>
-          <h2 className="text-4xl font-extrabold text-white mb-6 font-heading">Who We Are</h2>
-          <p className="text-[#A7EBF2]/80 text-lg mb-6 leading-relaxed">Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p>
-          <p className="text-[#A7EBF2]/80 text-lg leading-relaxed">We specialize in integrated air, ocean, and road freight services, customs clearance, warehousing, and export & Import trading. Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 font-heading">Who We Are</h2>
+          <p className="text-[#A7EBF2]/80 text-base md:text-lg mb-6 leading-relaxed">Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p>
+          <p className="text-[#A7EBF2]/80 text-base md:text-lg leading-relaxed">We specialize in integrated air, ocean, and road freight services, customs clearance, warehousing, and export & Import trading. Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p>
         </div>
-        <div className="bg-[#023859] rounded-[2rem] p-10 text-white shadow-2xl relative overflow-hidden border border-[#D4AF37]/50">
+        <div className="bg-[#023859] rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden border border-[#D4AF37]/50">
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-64 h-64 bg-[#D4AF37] rounded-full blur-[80px] opacity-20"></div>
           <h3 className="text-2xl font-bold mb-8 relative z-10 text-[#D4AF37] font-heading">Our Core Values</h3>
           <ul className="space-y-6 relative z-10">
@@ -531,7 +590,7 @@ const ServicesPage: React.FC<PageProps> = ({ setCurrentPage }) => (
   <>
     <div className="absolute top-0 w-full z-50"><Navbar currentPage="services" setCurrentPage={setCurrentPage} /></div>
     <InnerPageHeader title="What We Do" subtitle="Comprehensive multimodal integrated freight forwarding, customs clearance, warehousing, and turnkey sourcing solutions." image="https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?q=80&w=2070" />
-    <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-24">
+    <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-extrabold text-white mb-4 font-heading">Complete Logistics Network</h2>
         <p className="text-[#A7EBF2]/80 max-w-2xl mx-auto text-lg font-curvy">Hover over any service to explore our end-to-end supply chain management capabilities.</p>
