@@ -1130,10 +1130,19 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [showIntro, setShowIntro] = useState(true);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
+
+  useEffect(() => {
+    const handleScrollVisibility = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScrollVisibility);
+    return () => window.removeEventListener('scroll', handleScrollVisibility);
+  }, []);
 
   return (
     <>
@@ -1147,6 +1156,19 @@ function App() {
         {currentPage === 'contact' && <ContactPage setCurrentPage={setCurrentPage} />}
         <Footer setCurrentPage={setCurrentPage} />
       </div>
+
+      {/* Floating Scroll to Top Button */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className={`fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[90] p-3.5 md:p-4 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] shadow-lg shadow-[#D4AF37]/30 border border-[#D4AF37]/20 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer flex items-center justify-center ${
+          showScrollTop ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-90 pointer-events-none'
+        }`}
+        aria-label="Scroll to top"
+      >
+        <svg className="w-5 h-5 stroke-current" strokeWidth="3" fill="none" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>
+      </button>
     </>
   );
 }
