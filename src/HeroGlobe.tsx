@@ -31,9 +31,7 @@ export default function HeroGlobe() {
   }, []);
 
   useEffect(() => {
-    let checkCount = 0;
-    const initInterval = setInterval(() => {
-      checkCount++;
+    const initTimer = setTimeout(() => {
       if (globeEl.current) {
         try {
           // Position the camera to focus on India, without auto-rotation
@@ -51,23 +49,16 @@ export default function HeroGlobe() {
           if (typeof globeEl.current.globeMaterial === 'function') {
             const globeMaterial = globeEl.current.globeMaterial();
             if (globeMaterial && globeMaterial.color) {
-              globeMaterial.color.set('#3a4a5c'); // lighter blue-grey sea
-              // If we reached here without error, we can clear the interval
-              clearInterval(initInterval);
+              globeMaterial.color.set('#ffffff'); // reset color to display image naturally
             }
           }
         } catch (error) {
           console.error("Globe initialization error:", error);
         }
       }
-      
-      // Stop checking after a few seconds to avoid infinite loops
-      if (checkCount > 20) {
-        clearInterval(initInterval);
-      }
-    }, 250);
+    }, 100);
     
-    return () => clearInterval(initInterval);
+    return () => clearTimeout(initTimer);
   }, [dimensions, countries]); // Trigger after dimensions are set
 
   const ORIGIN = { lat: 13.0, lng: 77.5 }; // Bangalore/South India
@@ -108,11 +99,8 @@ export default function HeroGlobe() {
           showAtmosphere={true}
           atmosphereColor="#ffffff"
           atmosphereAltitude={0.15}
-
-          polygonsData={countries.features}
-          polygonCapColor={() => '#4a443f'} // lighter dark grey/brown continents
-          polygonSideColor={() => 'rgba(0, 0, 0, 0)'}
-          polygonStrokeColor={() => '#6a655f'} // lighter borders
+          globeImageUrl="https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+          bumpImageUrl="https://unpkg.com/three-globe/example/img/earth-topology.png"
 
           arcsData={arcsData}
           arcColor="color"
