@@ -383,9 +383,46 @@ const InnerPageHeader = ({ title, subtitle, image }: { title: string; subtitle: 
 );
 
 // ==========================================
+// SCROLL REVEAL COMPONENT
+// ==========================================
+const ScrollReveal: React.FC<{ children: React.ReactNode, delay?: number, className?: string, direction?: 'up' | 'down' | 'left' | 'right' | 'none' }> = ({ children, delay = 0, className = "", direction = 'up' }) => {
+  const domRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (domRef.current) observer.observe(domRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const getTransform = () => {
+    if (direction === 'up') return 'translate-y-16';
+    if (direction === 'down') return '-translate-y-16';
+    if (direction === 'left') return '-translate-x-16'; // From left to original pos
+    if (direction === 'right') return 'translate-x-16'; // From right to original pos
+    return '';
+  };
+
+  return (
+    <div
+      ref={domRef}
+      className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0 translate-x-0' : `opacity-0 ${getTransform()}`} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
+
+// ==========================================
 // PAGE COMPONENTS (all content unchanged, only slider logic fixed)
-// The rest of the components are identical to the previous code.
-// I'm including them here for completeness, but note they haven't changed.
 // ==========================================
 
 const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
@@ -428,7 +465,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
 
       <main className="max-w-screen-xl mx-auto w-full flex-grow px-4">
 
-        <section className="mb-32 grid md:grid-cols-2 gap-16 items-center min-h-[400px]">
+        <ScrollReveal><section className="mb-32 grid md:grid-cols-2 gap-16 items-center min-h-[400px]">
           <div className="relative">
             <div className="absolute -top-6 -left-6 bg-[#023859] text-[#D4AF37] p-4 rounded-2xl z-10 shadow-lg shadow-[#D4AF37]/20 border border-[#D4AF37]/50">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" /></svg>
@@ -461,10 +498,10 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
               </button>
             </div>
           </div>
-        </section>
+        </section></ScrollReveal>
 
         {/* 3 SERVICES PREVIEW */}
-        <section className="mb-32">
+        <ScrollReveal><section className="mb-32">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-white mb-4 font-heading">What We Do</h2>
             <p className="text-[#A7EBF2]/80 max-w-2xl mx-auto text-lg font-curvy">Integrated air, ocean, and road freight services, customs clearance, and turnkey solutions.</p>
@@ -503,10 +540,10 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
               View All Logistics Solutions <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </button>
           </div>
-        </section>
+        </section></ScrollReveal>
 
         {/* WHY CHOOSE US */}
-        <section className="mb-32">
+        <ScrollReveal><section className="mb-32">
           <div className="bg-[#011C40] rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl border border-[#D4AF37]/20">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none"></div>
             <div className="relative z-10 text-center mb-16">
@@ -514,18 +551,18 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
               <p className="text-[#D4AF37] max-w-2xl mx-auto text-lg font-curvy">We optimize your entire supply chain with cutting-edge technology and regional expertise.</p>
             </div>
             <div className="relative z-10 grid md:grid-cols-3 gap-8">
-              <div className="bg-[#023859]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" /><path d="M12 6v6l4 2" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Regional Expertise, Global Reach</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Deep understanding of South Indian supply chains combined with an expanding international network to support seamless import/export operations.</p></div>
-              <div className="bg-[#023859]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Technology-First Approach</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">We are building a real-time logistics platform featuring live shipment tracking, AI-driven notifications, automated workflows, and secure digital document management accessible via web and mobile.</p></div>
-              <div className="bg-[#023859]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Reliability & Speed</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Proven operational processes and proactive exception management ensure on-time deliveries and minimal disruption.</p></div>
-              <div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Compliance & Transparency</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Strong customs expertise and transparent pricing protect clients from delays and unexpected costs.</p></div>
-              <div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Customer-Centric Service</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Tailored logistics plans, dedicated account management, and 24/7 support for critical shipments.</p></div>
-              <div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2.69l5.66 4.2c.2.15.34.37.34.61v9c0 .24-.14.46-.34.61L12 2.69M12 2v20" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Sustainable Practices</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Commitment to eco-friendly transport options and optimized routing to lower carbon footprint.</p></div>
+              <ScrollReveal delay={0} className="h-full"><div className="bg-[#023859]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20 shrink-0"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" /><path d="M12 6v6l4 2" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Regional Expertise, Global Reach</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Deep understanding of South Indian supply chains combined with an expanding international network to support seamless import/export operations.</p></div></ScrollReveal>
+              <ScrollReveal delay={150} className="h-full"><div className="bg-[#023859]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20 shrink-0"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Technology-First Approach</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">We are building a real-time logistics platform featuring live shipment tracking, AI-driven notifications, automated workflows, and secure digital document management accessible via web and mobile.</p></div></ScrollReveal>
+              <ScrollReveal delay={300} className="h-full"><div className="bg-[#023859]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20 shrink-0"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Reliability & Speed</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Proven operational processes and proactive exception management ensure on-time deliveries and minimal disruption.</p></div></ScrollReveal>
+              <ScrollReveal delay={450} className="h-full"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20 shrink-0"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Compliance & Transparency</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Strong customs expertise and transparent pricing protect clients from delays and unexpected costs.</p></div></ScrollReveal>
+              <ScrollReveal delay={600} className="h-full"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20 shrink-0"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Customer-Centric Service</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Tailored logistics plans, dedicated account management, and 24/7 support for critical shipments.</p></div></ScrollReveal>
+              <ScrollReveal delay={750} className="h-full"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20 shrink-0"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2.69l5.66 4.2c.2.15.34.37.34.61v9c0 .24-.14.46-.34.61L12 2.69M12 2v20" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Sustainable Practices</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Commitment to eco-friendly transport options and optimized routing to lower carbon footprint.</p></div></ScrollReveal>
             </div>
           </div>
-        </section>
+        </section></ScrollReveal>
 
         {/* OUR TECHNOLOGY */}
-        <section className="mb-32">
+        <ScrollReveal><section className="mb-32">
           <div className="bg-[#023859] rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl border border-[#D4AF37]/20">
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none"></div>
             <div className="relative z-10 text-center mb-16">
@@ -533,17 +570,17 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
               <p className="text-[#A7EBF2] max-w-2xl mx-auto text-lg font-curvy">Mayura Freight is transforming freight forwarding with a proprietary, cloud-based platform that delivers:</p>
             </div>
             <div className="relative z-10 grid md:grid-cols-3 gap-8">
-              <div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Real-time Tracking</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">End-to-end visibility across air, sea, and road shipments.</p></div>
-              <div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">AI Notifications</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Proactive alerts for milestones, delays, and compliance issues.</p></div>
-              <div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Automated Workflows</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Faster booking, documentation, and customs clearance.</p></div>
-              <div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors md:col-span-1"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Secure Document Management</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Digital bills of lading, invoices, and certificates with role-based access controls.</p></div>
-              <div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors md:col-span-2"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Mobile & Web Access</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Easy access to shipment data and reporting on desktop and mobile devices.</p></div>
+              <ScrollReveal delay={0} className="h-full"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Real-time Tracking</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">End-to-end visibility across air, sea, and road shipments.</p></div></ScrollReveal>
+              <ScrollReveal delay={150} className="h-full"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">AI Notifications</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Proactive alerts for milestones, delays, and compliance issues.</p></div></ScrollReveal>
+              <ScrollReveal delay={300} className="h-full"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Automated Workflows</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Faster booking, documentation, and customs clearance.</p></div></ScrollReveal>
+              <ScrollReveal delay={450} className="h-full md:col-span-1"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Secure Document Management</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Digital bills of lading, invoices, and certificates with role-based access controls.</p></div></ScrollReveal>
+              <ScrollReveal delay={600} className="h-full md:col-span-2"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Mobile & Web Access</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Easy access to shipment data and reporting on desktop and mobile devices.</p></div></ScrollReveal>
             </div>
           </div>
-        </section>
+        </section></ScrollReveal>
 
         {/* INDUSTRIES WE SERVE */}
-        <section className="mb-32 text-center">
+        <ScrollReveal><section className="mb-32 text-center">
           <h2 className="text-4xl font-extrabold text-white mb-4 font-heading">Industries We Serve</h2>
           <p className="text-[#A7EBF2]/80 max-w-2xl mx-auto text-lg mb-12 font-curvy">We serve all industries, including comprehensive export and import solutions for:</p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -554,7 +591,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
             <div className="bg-[#023859]/80 backdrop-blur-md rounded-[2rem] overflow-hidden shadow-2xl border border-[#26658C]/50 hover:border-[#D4AF37] hover:-translate-y-2 transition-all flex flex-col group"><div className="h-40 w-full overflow-hidden bg-[#011C40]"><img src="/industry.jpg" alt="And every other industry sector" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70" /></div><div className="p-8 flex flex-col items-center"><svg className="w-10 h-10 text-[#D4AF37] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" /></svg><h4 className="font-bold text-white text-lg text-center">And every other industry sector</h4></div></div>
             <div className="bg-[#023859]/80 backdrop-blur-md rounded-[2rem] overflow-hidden shadow-2xl border border-[#26658C]/50 hover:border-[#D4AF37] hover:-translate-y-2 transition-all flex flex-col group"><div className="h-40 w-full overflow-hidden bg-[#011C40]"><img src="food.jpg" alt="Agriculture & Food Exports" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70" /></div><div className="p-8 flex flex-col items-center"><svg className="w-10 h-10 text-[#D4AF37] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></svg><h4 className="font-bold text-white text-lg text-center">Agriculture & Food Exports</h4></div></div>
           </div>
-        </section>
+        </section></ScrollReveal>
       </main>
     </>
   );
@@ -567,16 +604,20 @@ const AboutPage: React.FC<PageProps> = ({ setCurrentPage }) => (
     <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-16 md:mb-24">
         <div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 font-heading">Who We Are</h2>
-          <p className="text-[#A7EBF2]/80 text-base md:text-lg mb-6 leading-relaxed">Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p>
-          <p className="text-[#A7EBF2]/80 text-base md:text-lg leading-relaxed">We specialize in integrated air, ocean, and road freight services, customs clearance, warehousing, and export & Import trading. Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p>
+          <ScrollReveal direction="left" delay={0}><h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 font-heading">Who We Are</h2></ScrollReveal>
+          <div className="border-l-4 border-[#D4AF37] pl-6 ml-2 overflow-hidden py-1">
+            <ScrollReveal direction="left" delay={150}><p className="text-[#A7EBF2]/80 text-base md:text-lg mb-6 leading-relaxed">Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p></ScrollReveal>
+            <ScrollReveal direction="left" delay={300}><p className="text-[#A7EBF2]/80 text-base md:text-lg leading-relaxed">We specialize in integrated air, ocean, and road freight services, customs clearance, warehousing, and export & Import trading. Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p></ScrollReveal>
+          </div>
         </div>
         <div className="bg-[#023859] rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden border border-[#D4AF37]/50">
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-64 h-64 bg-[#D4AF37] rounded-full blur-[80px] opacity-20"></div>
           <h3 className="text-2xl font-bold mb-8 relative z-10 text-[#D4AF37] font-heading">Our Core Values</h3>
           <ul className="space-y-6 relative z-10">
             {[{ title: 'Reliability', desc: 'Delivering consistent, dependable logistics solutions.' }, { title: 'Integrity', desc: 'Transparent pricing and ethical business conduct.' }, { title: 'Innovation', desc: 'Continual investment in technology to enhance efficiency.' }, { title: 'Customer Focus', desc: 'Tailored solutions and responsive support.' }, { title: 'Sustainability', desc: 'Promoting green logistics initiatives across operations.' }].map((v, i) => (
-              <li key={i} className="flex gap-4"><div className="mt-1"><svg className="w-5 h-5 text-[#D4AF37]" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg></div><div><strong className="text-white block text-lg">{v.title}</strong><span className="text-[#A7EBF2]/80 text-sm block mt-1">{v.desc}</span></div></li>
+              <ScrollReveal delay={i * 150} key={i}>
+                <li className="flex gap-4"><div className="mt-1"><svg className="w-5 h-5 text-[#D4AF37]" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg></div><div><strong className="text-white block text-lg">{v.title}</strong><span className="text-[#A7EBF2]/80 text-sm block mt-1">{v.desc}</span></div></li>
+              </ScrollReveal>
             ))}
           </ul>
         </div>
