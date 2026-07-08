@@ -114,7 +114,7 @@ const IntroOverlay = ({ onComplete }: { onComplete: () => void }) => {
             className="w-32 h-32 md:w-40 md:h-40 object-contain  mb-6 drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]"
           />
           <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
-            Mayura Freight
+            Mayura Freights
           </h1>
           <p className="text-[#D4AF37] font-bold tracking-[0.3em] uppercase mt-3 text-sm md:text-base font-heading">
             & Trades Pvt Ltd
@@ -225,7 +225,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
                 <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.2em] bg-gradient-to-b from-[#F2DA91] via-[#D4AF37] to-[#8B6914] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-heading leading-none pt-1 pr-[0.2em]">MAYURA</span>
                 <div className="flex items-center w-full gap-1 sm:gap-1.5 px-0.5">
                   <div className="h-[2px] flex-grow bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
-                  <span className="text-[6px] sm:text-[8px] md:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[#D4AF37] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] font-heading leading-none whitespace-nowrap">FREIGHT AND TRADES</span>
+                  <span className="text-[6px] sm:text-[8px] md:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[#D4AF37] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] font-heading leading-none whitespace-nowrap">FREIGHTS AND TRADES</span>
                   <div className="h-[2px] flex-grow bg-gradient-to-l from-transparent to-[#D4AF37]"></div>
                 </div>
               </div>
@@ -318,7 +318,7 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
         <div className="md:col-span-4 max-w-md mx-auto md:mx-0 text-center md:text-left flex flex-col items-center md:items-start">
           <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
             <img src="/logo-main.png" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain bg-[#011C40] rounded-xl p-1.5 border border-[#D4AF37]" />
-            <span className="text-xl md:text-2xl font-bold tracking-tight text-[#D4AF37] font-heading text-left whitespace-nowrap">Mayura Freight & Trades Pvt Ltd</span>
+            <span className="text-xl md:text-2xl font-bold tracking-tight text-[#D4AF37] font-heading text-left whitespace-nowrap">Mayura Freights & Trades Pvt Ltd</span>
           </div>
           <div className="w-full flex items-center justify-center gap-4 mt-6">
             <a href="#" className="p-3 bg-[#011C40] border border-[#26658C] rounded-full hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:-translate-y-1 transition-all duration-300 group shadow-[0_0_10px_rgba(38,101,140,0.3)]" aria-label="Instagram">
@@ -361,8 +361,8 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
         <div className="md:col-span-4">
           <h4 className="text-lg font-bold mb-6 text-white font-heading">Contact Details</h4>
           <p className="text-[#A7EBF2]/80 mb-4 leading-relaxed">For direct enquiries, request a quote, or operational support.</p>
-          <a href="mailto:info@mayurafreight.com" className="inline-block bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] hover:scale-105 px-8 py-3 rounded-full font-bold transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] mb-3 w-full text-center">
-            info@mayurafreight.com
+          <a href="mailto:info@mayurafreights.com" className="inline-block bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] hover:scale-105 px-8 py-3 rounded-full font-bold transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] mb-3 w-full text-center">
+            info@mayurafreights.com
           </a>
           <a href="tel:+919876543210" className="inline-block bg-[#011C40] border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#011C40] px-8 py-3 rounded-full font-bold transition-colors w-full text-center">
             +91-9876543210
@@ -370,7 +370,7 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
         </div>
       </div>
       <div className="border-t border-[#26658C] pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[#54ACBF] text-sm font-medium">
-        <p>© 2026 Mayura Freight & Trades Pvt Ltd. All rights reserved.</p>
+        <p>© 2026 Mayura Freights & Trades Pvt Ltd. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -480,11 +480,11 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
             <img src="hero.png" alt="Logistics" className="rounded-[2.5rem] shadow-2xl shadow-[#023859]/20 w-full h-[450px] object-cover border-8 border-[#023859]" />
           </div>
           <div className="flex flex-col justify-center">
-            <h2 className="text-4xl font-extrabold text-white mb-6 font-heading">Welcome to Mayura Freight</h2>
+            <h2 className="text-4xl font-extrabold text-white mb-6 font-heading">Welcome to Mayura Freights</h2>
             <div className="min-h-[180px] mb-8">
               {activeTab === 'welcome' && (
                 <div className="animate-fade-in">
-                  <p className="text-[#A7EBF2]/80 text-lg mb-6 leading-relaxed">Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p>
+                  <p className="text-[#A7EBF2]/80 text-lg mb-6 leading-relaxed">Mayura Freights & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p>
                   <p className="text-[#A7EBF2]/80 text-lg leading-relaxed">Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p>
                 </div>
               )}
@@ -574,7 +574,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none"></div>
             <div className="relative z-10 text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white font-heading">Our Technology</h2>
-              <p className="text-[#A7EBF2] max-w-2xl mx-auto text-lg font-curvy">Mayura Freight is transforming freight forwarding with a proprietary, cloud-based platform that delivers:</p>
+              <p className="text-[#A7EBF2] max-w-2xl mx-auto text-lg font-curvy">Mayura Freights is transforming freight forwarding with a proprietary, cloud-based platform that delivers:</p>
             </div>
             <div className="relative z-10 grid md:grid-cols-3 gap-8">
               <ScrollReveal delay={0} className="h-full"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Real-time Tracking</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">End-to-end visibility across air, sea, and road shipments.</p></div></ScrollReveal>
@@ -607,14 +607,14 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
 const AboutPage: React.FC<PageProps> = ({ setCurrentPage }) => (
   <>
     <div className="absolute top-0 w-full z-50"><Navbar currentPage="about" setCurrentPage={setCurrentPage} /></div>
-    <InnerPageHeader title="About Mayura Freight" subtitle="A dynamic, technology-driven freight forwarding and foreign trading company." image="/aboutt.png" />
+    <InnerPageHeader title="About Mayura Freights" subtitle="A dynamic, technology-driven freights forwarding and foreign trading company." image="/aboutt.png" />
     <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-16 md:mb-24">
         <div>
           <ScrollReveal direction="left" delay={0}><h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 font-heading">Who We Are</h2></ScrollReveal>
           <div className="border-l-4 border-[#D4AF37] pl-6 ml-2 overflow-hidden py-1">
-            <ScrollReveal direction="left" delay={150}><p className="text-[#A7EBF2]/80 text-base md:text-lg mb-6 leading-relaxed">Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p></ScrollReveal>
-            <ScrollReveal direction="left" delay={300}><p className="text-[#A7EBF2]/80 text-base md:text-lg leading-relaxed">We specialize in integrated air, ocean, and road freight services, customs clearance, warehousing, and export & Import trading. Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p></ScrollReveal>
+            <ScrollReveal direction="left" delay={150}><p className="text-[#A7EBF2]/80 text-base md:text-lg mb-6 leading-relaxed">Mayura Freights & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p></ScrollReveal>
+            <ScrollReveal direction="left" delay={300}><p className="text-[#A7EBF2]/80 text-base md:text-lg leading-relaxed">We specialize in integrated air, ocean, and road freight services, customs clearance, warehousing, and export & Import trading. Built on a foundation of integrity and customer-centric service, Mayura Freights combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p></ScrollReveal>
           </div>
         </div>
         <div className="bg-[#023859] rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden border border-[#D4AF37]/50">
@@ -636,7 +636,7 @@ const AboutPage: React.FC<PageProps> = ({ setCurrentPage }) => (
 const ServicesPage: React.FC<PageProps> = ({ setCurrentPage }) => (
   <>
     <div className="absolute top-0 w-full z-50"><Navbar currentPage="services" setCurrentPage={setCurrentPage} /></div>
-    <InnerPageHeader title="What We Do" subtitle="Comprehensive multimodal integrated freight forwarding, customs clearance, warehousing, and turnkey sourcing solutions." image="/services.png" />
+    <InnerPageHeader title="What We Do" subtitle="Comprehensive multimodal integrated freights forwarding, customs clearance, warehousing, and turnkey sourcing solutions." image="/services.png" />
     <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-extrabold text-white mb-4 font-heading">Complete Logistics Network</h2>
@@ -644,12 +644,12 @@ const ServicesPage: React.FC<PageProps> = ({ setCurrentPage }) => (
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { title: 'Freight Forwarding', images: ['/FF1.png', 'FF2.png', 'FF3.jpg'], desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
+          { title: 'Freights Forwarding', images: ['/FF1.png', 'FF2.png', 'FF3.jpg'], desc: 'Customized sea freights, air freights, and road freights services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
           { title: 'Customs Clearance & Compliance', images: ['/ccc1.jpeg', 'ccc2.jpeg', 'ccc3.jpeg'], desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements across jurisdictions.', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
           { title: 'Warehousing & Distribution', images: ['/wd1.jpeg', 'wd2.jpeg', 'wd3.jpeg'], desc: 'Secure, strategically located warehousing, inventory management, pick-and-pack services, and last-mile distribution to support lean supply chains and timely deliveries.', icon: <><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></> },
           { title: 'End-to-End Logistics Solutions', images: ['/end-to-end.jpg', 'ete2.jpeg', 'ete3.jpeg'], desc: 'Integrated supply chain management, multimodal transportation planning, vendor coordination, and reverse logistics to reduce lead times and lower total landed cost.', icon: <><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><circle cx="12" cy="12" r="4" /></> },
           { title: 'Export Trading', images: ['/et1.jpeg', 'et2.jpeg', 'et3.png'], desc: 'Provides comprehensive export services for all product categories, leveraging our direct partnerships with manufacturers in China. We specialize in exporting from India, importing from China and Europe, and connecting global buyers with trusted manufacturers.', icon: <><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></> },
-          { title: 'Turnkey Sourcing Solutions', images: ['/tss1.jpg', 'tss2.png', 'tss3.png'], desc: 'We are specialized in the end-to-end process—from sourcing the product to moving it on our own freight. From any product you need, we deliver complete turnkey solutions—from procurement, quality control, and pricing to packaging, documentation, and shipment using our freight capabilities. Our manufacturer network ensures reliable sourcing, competitive pricing, and seamless cross-border trade across India, China, and Europe.', icon: <><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></> },
+          { title: 'Turnkey Sourcing Solutions', images: ['/tss1.jpg', 'tss2.png', 'tss3.png'], desc: 'We are specialized in the end-to-end process—from sourcing the product to moving it on our own freights. From any product you need, we deliver complete turnkey solutions—from procurement, quality control, and pricing to packaging, documentation, and shipment using our freights capabilities. Our manufacturer network ensures reliable sourcing, competitive pricing, and seamless cross-border trade across India, China, and Europe.', icon: <><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></> },
         ].map((srv, idx) => (
           <div key={idx} onClick={() => setCurrentPage('contact')} className="group relative h-[480px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl border border-[#26658C]/50 hover:border-[#D4AF37]/50 hover:scale-[1.02] transition-transform duration-500">
             <ImageSlider images={srv.images} title={srv.title} delay={idx * 20} />
@@ -689,9 +689,9 @@ const SouthIndiaMap: React.FC = () => {
       role: 'Corporate Headquarters',
       x: 478,
       y: 312,
-      address: 'Mayura Freight & Trades Pvt Ltd, 5th Floor, Gold Towers, Residency Road, Bengaluru - 560025',
+      address: 'Mayura Freights & Trades Pvt Ltd, 5th Floor, Gold Towers, Residency Road, Bengaluru - 560025',
       phone: '+91-80-45678901',
-      email: 'info@mayurafreight.com',
+      email: 'info@mayurafreights.com',
       hours: '9:00 AM - 6:00 PM (Mon-Sat)',
     },
     {
@@ -701,9 +701,9 @@ const SouthIndiaMap: React.FC = () => {
       role: 'Maritime Logistics & Compliance Center',
       x: 590,
       y: 305,
-      address: 'Mayura Freight & Trades Pvt Ltd, Port View Chambers, Rajaji Salai, Chennai - 600001',
+      address: 'Mayura Freights & Trades Pvt Ltd, Port View Chambers, Rajaji Salai, Chennai - 600001',
       phone: '+91-44-23456789',
-      email: 'info@mayurafreight.com',
+      email: 'info@mayurafreights.com',
       hours: '9:00 AM - 6:00 PM (Mon-Sat)',
     },
     {
@@ -713,9 +713,9 @@ const SouthIndiaMap: React.FC = () => {
       role: 'Inland Logistics & Technology Center',
       x: 540,
       y: 125,
-      address: 'Mayura Freight & Trades Pvt Ltd, Tech Park, Hitec City, Hyderabad - 500081',
+      address: 'Mayura Freights & Trades Pvt Ltd, Tech Park, Hitec City, Hyderabad - 500081',
       phone: '+91-40-34567890',
-      email: 'info@mayurafreight.com',
+      email: 'info@mayurafreights.com',
       hours: '9:00 AM - 7:00 PM (Mon-Sat)',
     },
     {
@@ -725,9 +725,9 @@ const SouthIndiaMap: React.FC = () => {
       role: 'Coastal Logistics & Sourcing Gateway',
       x: 415,
       y: 415,
-      address: 'Mayura Freight & Trades Pvt Ltd, Maritime Plaza, Willingdon Island, Kochi - 682003',
+      address: 'Mayura Freights & Trades Pvt Ltd, Maritime Plaza, Willingdon Island, Kochi - 682003',
       phone: '+91-484-5678901',
-      email: 'info@mayurafreight.com',
+      email: 'info@mayurafreights.com',
       hours: '9:00 AM - 6:00 PM (Mon-Sat)',
     }
   ];
@@ -879,7 +879,7 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Inquiry sent successfully to Mayura Freight!');
+    alert('Inquiry sent successfully to Mayura Freights!');
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -888,7 +888,7 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
       <div className="absolute top-0 w-full z-50"><Navbar currentPage="contact" setCurrentPage={setCurrentPage} /></div>
       <InnerPageHeader
         title="Get in Touch"
-        subtitle="Partner with Mayura Freight & Trades Pvt Ltd. today for smarter, safer, and faster logistics."
+        subtitle="Partner with Mayura Freights & Trades Pvt Ltd. today for smarter, safer, and faster logistics."
         image="/contactt.png"
       />
       <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24 space-y-8 md:space-y-16">
@@ -898,7 +898,7 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
 
             <div className="flex flex-col h-full">
               <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white font-heading">Let's build your supply chain.</h2>
-              <p className="text-[#A7EBF2] text-lg mb-12 font-curvy">Whether you need global freight forwarding, reliable customs clearance, or turnkey sourcing services, our team is ready to assist you.</p>
+              <p className="text-[#A7EBF2] text-lg mb-12 font-curvy">Whether you need global freights forwarding, reliable customs clearance, or turnkey sourcing services, our team is ready to assist you.</p>
 
               <div className="space-y-8 mb-16">
                 <div className="flex items-start gap-4">
@@ -912,7 +912,7 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
                   <div className="bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] p-4 rounded-xl shadow-lg shadow-[#D4AF37]/20"><svg className="w-6 h-6 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg></div>
                   <div>
                     <h4 className="text-xl font-bold mb-1 text-white font-heading">Direct Enquiries</h4>
-                    <p className="text-[#A7EBF2]/80">info@mayurafreight.com</p>
+                    <p className="text-[#A7EBF2]/80">info@mayurafreights.com</p>
                     <p className="text-[#A7EBF2]/80">+91-9876543210</p>
                   </div>
                 </div>
