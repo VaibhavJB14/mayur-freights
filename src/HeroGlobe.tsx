@@ -31,7 +31,9 @@ export default function HeroGlobe() {
   }, []);
 
   useEffect(() => {
-    const initTimer = setTimeout(() => {
+    let checkCount = 0;
+    const initInterval = setInterval(() => {
+      checkCount++;
       if (globeEl.current) {
         try {
           // Position the camera to focus on India, without auto-rotation
@@ -50,15 +52,22 @@ export default function HeroGlobe() {
             const globeMaterial = globeEl.current.globeMaterial();
             if (globeMaterial && globeMaterial.color) {
               globeMaterial.color.set('#3a4a5c'); // lighter blue-grey sea
+              // If we reached here without error, we can clear the interval
+              clearInterval(initInterval);
             }
           }
         } catch (error) {
           console.error("Globe initialization error:", error);
         }
       }
-    }, 100);
+      
+      // Stop checking after a few seconds to avoid infinite loops
+      if (checkCount > 20) {
+        clearInterval(initInterval);
+      }
+    }, 250);
     
-    return () => clearTimeout(initTimer);
+    return () => clearInterval(initInterval);
   }, [dimensions, countries]); // Trigger after dimensions are set
 
   const ORIGIN = { lat: 13.0, lng: 77.5 }; // Bangalore/South India
