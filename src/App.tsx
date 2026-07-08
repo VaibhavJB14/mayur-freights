@@ -219,9 +219,16 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
         <nav className="relative flex flex-col md:flex-row items-center justify-between px-4 sm:px-8 w-full max-w-screen-2xl mx-auto">
 
           <div className="flex items-center justify-between w-full md:w-auto">
-            <div className={`bg-[#023859] px-4 sm:px-6 rounded-b-[1.5rem] md:rounded-b-[2rem] shadow-2xl flex items-center gap-3 shrink-0 border-b-4 border-[#D4AF37] cursor-pointer transition-all duration-300 ${scrolled ? 'py-2.5 md:py-3 md:rounded-b-xl' : 'py-4 sm:py-5'}`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
-              <img src="/logo-main.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" />
-              <span className="text-sm sm:text-base md:text-2xl font-extrabold text-white tracking-tight font-heading leading-tight">Mayura Freight & Trades Pvt Ltd</span>
+            <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
+              <img src="/logo-main.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
+              <div className="flex flex-col items-center justify-center -space-y-0.5 w-max">
+                <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.2em] bg-gradient-to-b from-[#F2DA91] via-[#D4AF37] to-[#8B6914] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-heading leading-none pt-1 pr-[0.2em]">MAYURA</span>
+                <div className="flex items-center w-full gap-1 sm:gap-1.5 px-0.5">
+                  <div className="h-[2px] flex-grow bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
+                  <span className="text-[6px] sm:text-[8px] md:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[#D4AF37] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] font-heading leading-none whitespace-nowrap">FREIGHT AND TRADES</span>
+                  <div className="h-[2px] flex-grow bg-gradient-to-l from-transparent to-[#D4AF37]"></div>
+                </div>
+              </div>
             </div>
 
             {/* Mobile Hamburger Button */}
