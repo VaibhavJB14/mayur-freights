@@ -219,7 +219,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
         <nav className="relative flex flex-col md:flex-row items-center justify-between px-4 sm:px-8 w-full max-w-screen-2xl mx-auto">
 
           <div className="flex items-center justify-between w-full md:w-auto">
-            <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
+            <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2 ml-2 sm:ml-4 md:ml-6`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
               <img src="/logo-main.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
               <div className="flex flex-col items-center justify-center -space-y-0.5 w-max">
                 <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.2em] bg-gradient-to-b from-[#F2DA91] via-[#D4AF37] to-[#8B6914] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-heading leading-none pt-1 pr-[0.2em]">MAYURA</span>
