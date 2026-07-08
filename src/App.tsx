@@ -488,7 +488,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
                   <h3 className="text-xl md:text-2xl font-extrabold text-white mb-0 shrink-0 font-heading">{srv.title}</h3>
                   <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-in-out">
                     <div className="overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 flex flex-col">
-                      <p className="text-[#A7EBF2] text-sm leading-relaxed mb-6 mt-3">{srv.desc}</p>
+                      <p className="text-[#A7EBF2] text-sm leading-relaxed mb-6 mt-3 bg-[#011C40]/70 p-3 rounded-lg backdrop-blur-sm shadow-md inline-block">{srv.desc}</p>
                       <button onClick={(e) => { e.stopPropagation(); setCurrentPage('contact'); }} className="text-white font-bold text-sm flex items-center gap-2 hover:text-[#D4AF37] transition-colors uppercase tracking-wider w-fit cursor-pointer">
                         Request Quote <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                       </button>
@@ -613,7 +613,7 @@ const ServicesPage: React.FC<PageProps> = ({ setCurrentPage }) => (
               <h3 className="text-xl md:text-2xl font-extrabold text-white mb-0 shrink-0 font-heading">{srv.title}</h3>
               <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-in-out">
                 <div className="overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 flex flex-col">
-                  <p className="text-[#A7EBF2] text-sm leading-relaxed mb-6 mt-3">{srv.desc}</p>
+                  <p className="text-[#A7EBF2] text-sm leading-relaxed mb-6 mt-3 bg-[#011C40]/70 p-3 rounded-lg backdrop-blur-sm shadow-md inline-block">{srv.desc}</p>
                   <button onClick={(e) => { e.stopPropagation(); setCurrentPage('contact'); }} className="text-white font-bold text-sm flex items-center gap-2 hover:text-[#D4AF37] transition-colors uppercase tracking-wider w-fit cursor-pointer">Request Quote <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg></button>
                 </div>
               </div>
