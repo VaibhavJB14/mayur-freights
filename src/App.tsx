@@ -478,8 +478,6 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
             ].map((srv, idx) => (
               <div key={idx} onClick={() => setCurrentPage('contact')} className="group relative h-[480px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl border border-[#26658C]/50 hover:border-[#D4AF37]/50 hover:scale-[1.02] transition-transform duration-500">
                 <ImageSlider images={srv.images} title={srv.title} delay={idx * 20} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#011C40] via-[#023859]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                <div className="absolute inset-0 bg-[#26658C]/30 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
                 {/* Decorative coracle */}
 
@@ -607,8 +605,6 @@ const ServicesPage: React.FC<PageProps> = ({ setCurrentPage }) => (
         ].map((srv, idx) => (
           <div key={idx} onClick={() => setCurrentPage('contact')} className="group relative h-[480px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl border border-[#26658C]/50 hover:border-[#D4AF37]/50 hover:scale-[1.02] transition-transform duration-500">
             <ImageSlider images={srv.images} title={srv.title} delay={idx * 20} />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011C40] via-[#023859]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-            <div className="absolute inset-0 bg-[#26658C]/30 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
             {/* Decorative coracle */}
 
