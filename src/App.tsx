@@ -222,10 +222,10 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
             <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2 ml-4 sm:ml-6 md:ml-10`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
               <img src="/logo-main.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
               <div className="flex flex-col items-center justify-center -space-y-0.5 w-max">
-                <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.2em] bg-gradient-to-b from-[#F2DA91] via-[#D4AF37] to-[#8B6914] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-heading leading-none pt-1 pr-[0.2em]">MAYURA</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.3em] md:tracking-[0.45em] ml-[0.3em] md:ml-[0.45em] bg-gradient-to-b from-[#F2DA91] via-[#D4AF37] to-[#8B6914] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-heading leading-none pt-1">MAYURA</span>
                 <div className="flex items-center w-full gap-1 sm:gap-1.5 px-0.5">
                   <div className="h-[2px] flex-grow bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
-                  <span className="text-[6px] sm:text-[8px] md:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[#D4AF37] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] font-heading leading-none whitespace-nowrap">FREIGHTS AND TRADES</span>
+                  <span className="text-[6px] sm:text-[8px] md:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[#D4AF37] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] font-heading leading-none whitespace-nowrap">FREIGHTS AND TRADES PVT. LTD.</span>
                   <div className="h-[2px] flex-grow bg-gradient-to-l from-transparent to-[#D4AF37]"></div>
                 </div>
               </div>
@@ -336,25 +336,25 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
           </div>
         </div>
 
-        <div className="md:col-span-2 md:pl-6 lg:pl-12">
-          <h4 className="text-lg font-bold mb-6 text-white font-heading">Quick Links</h4>
-          <ul className="space-y-4 text-[#A7EBF2]/80 font-medium">
-            <li><button onClick={() => setCurrentPage('home')} className="hover:text-[#D4AF37] transition-colors">Home</button></li>
-            <li><button onClick={() => setCurrentPage('about')} className="hover:text-[#D4AF37] transition-colors">About Us</button></li>
-            <li><button onClick={() => setCurrentPage('services')} className="hover:text-[#D4AF37] transition-colors">Our Services</button></li>
-            <li><button onClick={() => setCurrentPage('contact')} className="hover:text-[#D4AF37] transition-colors">Contact</button></li>
-            <li><button onClick={() => setCurrentPage('contact')} className="hover:text-[#D4AF37] transition-colors">Request Quote</button></li>
+        <div className="md:col-span-2 md:pl-6 lg:pl-12 flex flex-col items-start">
+          <h4 className="text-lg font-bold mb-6 text-white font-heading text-left w-full">Quick Links</h4>
+          <ul className="space-y-4 text-[#A7EBF2]/80 font-medium flex flex-col items-start w-full">
+            <li><button onClick={() => setCurrentPage('home')} className="hover:text-[#D4AF37] transition-colors text-left">Home</button></li>
+            <li><button onClick={() => setCurrentPage('about')} className="hover:text-[#D4AF37] transition-colors text-left">About Us</button></li>
+            <li><button onClick={() => setCurrentPage('services')} className="hover:text-[#D4AF37] transition-colors text-left">Our Services</button></li>
+            <li><button onClick={() => setCurrentPage('contact')} className="hover:text-[#D4AF37] transition-colors text-left">Contact</button></li>
+            <li><button onClick={() => setCurrentPage('contact')} className="hover:text-[#D4AF37] transition-colors text-left">Request Quote</button></li>
           </ul>
         </div>
 
-        <div className="md:col-span-2">
-          <h4 className="text-lg font-bold mb-6 text-white font-heading">Company Values</h4>
-          <ul className="space-y-4 text-[#A7EBF2]/80 font-medium">
-            <li><span className="hover:text-[#D4AF37] transition-colors cursor-default">Reliability</span></li>
-            <li><span className="hover:text-[#D4AF37] transition-colors cursor-default">Integrity</span></li>
-            <li><span className="hover:text-[#D4AF37] transition-colors cursor-default">Innovation</span></li>
-            <li><span className="hover:text-[#D4AF37] transition-colors cursor-default">Customer Focus</span></li>
-            <li><span className="hover:text-[#D4AF37] transition-colors cursor-default">Sustainability</span></li>
+        <div className="md:col-span-2 flex flex-col items-start">
+          <h4 className="text-lg font-bold mb-6 text-white font-heading text-left w-full">Company Values</h4>
+          <ul className="space-y-4 text-[#A7EBF2]/80 font-medium flex flex-col items-start w-full">
+            <li><div className="hover:text-[#D4AF37] transition-colors cursor-default text-left">Reliability</div></li>
+            <li><div className="hover:text-[#D4AF37] transition-colors cursor-default text-left">Integrity</div></li>
+            <li><div className="hover:text-[#D4AF37] transition-colors cursor-default text-left">Innovation</div></li>
+            <li><div className="hover:text-[#D4AF37] transition-colors cursor-default text-left">Customer Focus</div></li>
+            <li><div className="hover:text-[#D4AF37] transition-colors cursor-default text-left">Sustainability</div></li>
           </ul>
         </div>
 
@@ -477,7 +477,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
             <div className="absolute -top-6 -left-6 bg-[#023859] text-[#D4AF37] p-4 rounded-2xl z-10 shadow-lg shadow-[#D4AF37]/20 border border-[#D4AF37]/50">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" /></svg>
             </div>
-            <img src="hero.png" alt="Logistics" className="rounded-[2.5rem] shadow-2xl shadow-[#023859]/20 w-full h-[450px] object-cover border-8 border-[#023859]" />
+            <img src="heroo.PNG" alt="Logistics" className="rounded-[2.5rem] shadow-2xl shadow-[#023859]/20 w-full h-[450px] object-cover border-8 border-[#023859]" />
           </div>
           <div className="flex flex-col justify-center">
             <h2 className="text-4xl font-extrabold text-white mb-6 font-heading">Welcome to Mayura Freights</h2>
@@ -516,7 +516,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Freight Forwarding', images: ['    FF1.png ', '    FF2.png ', '   FF3.jpg'], desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
+              { title: 'Freight Forwarding', images: ['    FF1.png ', '    FF2.jpg ', '   FF3.jpg'], desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
               { title: 'Customs Clearance & Compliance', images: ['    ccc1.jpeg ', '    ccc2.jpeg ', '   ccc3.jpeg'], desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements across jurisdictions.', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
               { title: 'Warehousing & Distribution', images: ['  wd1.jpeg   ', '    wd2.jpeg ', 'wd3.jpeg'], desc: 'Secure, strategically located warehousing, inventory management, pick-and-pack services, and last-mile distribution to support lean supply chains and timely deliveries.', icon: <><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></> }
             ].map((srv, idx) => (
@@ -644,11 +644,11 @@ const ServicesPage: React.FC<PageProps> = ({ setCurrentPage }) => (
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { title: 'Freights Forwarding', images: ['/FF1.png', 'FF2.png', 'FF3.jpg'], desc: 'Customized sea freights, air freights, and road freights services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
+          { title: 'Freights Forwarding', images: ['/FF1.png', 'FF2.jpg', 'FF3.jpg'], desc: 'Customized sea freights, air freights, and road freights services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
           { title: 'Customs Clearance & Compliance', images: ['/ccc1.jpeg', 'ccc2.jpeg', 'ccc3.jpeg'], desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements across jurisdictions.', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
           { title: 'Warehousing & Distribution', images: ['/wd1.jpeg', 'wd2.jpeg', 'wd3.jpeg'], desc: 'Secure, strategically located warehousing, inventory management, pick-and-pack services, and last-mile distribution to support lean supply chains and timely deliveries.', icon: <><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></> },
           { title: 'End-to-End Logistics Solutions', images: ['/end-to-end.jpg', 'ete2.jpeg', 'ete3.jpeg'], desc: 'Integrated supply chain management, multimodal transportation planning, vendor coordination, and reverse logistics to reduce lead times and lower total landed cost.', icon: <><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><circle cx="12" cy="12" r="4" /></> },
-          { title: 'Export Trading', images: ['/et1.jpeg', 'et2.jpeg', 'et3.png'], desc: 'Provides comprehensive export services for all product categories, leveraging our direct partnerships with manufacturers in China. We specialize in exporting from India, importing from China and Europe, and connecting global buyers with trusted manufacturers.', icon: <><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></> },
+          { title: 'Export Trading', images: ['/et1.jpeg', 'et2.jpg', 'et3.png'], desc: 'Provides comprehensive export services for all product categories, leveraging our direct partnerships with manufacturers in China. We specialize in exporting from India, importing from China and Europe, and connecting global buyers with trusted manufacturers.', icon: <><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></> },
           { title: 'Turnkey Sourcing Solutions', images: ['/tss1.jpg', 'tss2.png', 'tss3.png'], desc: 'We are specialized in the end-to-end process—from sourcing the product to moving it on our own freights. From any product you need, we deliver complete turnkey solutions—from procurement, quality control, and pricing to packaging, documentation, and shipment using our freights capabilities. Our manufacturer network ensures reliable sourcing, competitive pricing, and seamless cross-border trade across India, China, and Europe.', icon: <><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></> },
         ].map((srv, idx) => (
           <div key={idx} onClick={() => setCurrentPage('contact')} className="group relative h-[480px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl border border-[#26658C]/50 hover:border-[#D4AF37]/50 hover:scale-[1.02] transition-transform duration-500">
@@ -876,11 +876,11 @@ const SouthIndiaMap: React.FC = () => {
 };
 
 const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Inquiry sent successfully to Mayura Freights!');
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
   return (
@@ -922,7 +922,8 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
             <form onSubmit={handleSubmit} className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 h-fit z-20 relative">
               <div className="space-y-4">
                 <input type="text" placeholder="Your Name / Company" required className="w-full bg-[#011C40]/50 border border-[#26658C]/50 rounded-xl px-4 py-4 text-white placeholder:text-[#A7EBF2]/50 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
-                <input type="email" placeholder="Work Email" required className="w-full bg-[#011C40]/50 border border-[#26658C]/50 rounded-xl px-4 py-4 text-white placeholder:text-[#A7EBF2]/50 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+                <input type="email" placeholder="Work Email" className="w-full bg-[#011C40]/50 border border-[#26658C]/50 rounded-xl px-4 py-4 text-white placeholder:text-[#A7EBF2]/50 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+                <input type="tel" placeholder="Phone Number" required className="w-full bg-[#011C40]/50 border border-[#26658C]/50 rounded-xl px-4 py-4 text-white placeholder:text-[#A7EBF2]/50 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
                 <textarea placeholder="Describe your logistics or trading requirements..." required rows={5} className="w-full bg-[#011C40]/50 border border-[#26658C]/50 rounded-xl px-4 py-4 text-white placeholder:text-[#A7EBF2]/50 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] resize-none" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}></textarea>
                 <button type="submit" className="w-full bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] hover:scale-105 text-[#011C40] font-bold py-4 rounded-xl transition-all cursor-pointer shadow-lg shadow-[#D4AF37]/30">Submit Inquiry</button>
               </div>
