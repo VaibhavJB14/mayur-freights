@@ -113,10 +113,10 @@ const IntroOverlay = ({ onComplete }: { onComplete: () => void }) => {
             alt="Mayura Logo"
             className="w-32 h-32 md:w-40 md:h-40 object-contain  mb-6 drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]"
           />
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
+          <h1 className="text-2xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
             Mayura Freights
           </h1>
-          <p className="text-[#D4AF37] font-bold tracking-[0.3em] uppercase mt-3 text-sm md:text-base font-heading">
+          <p className="text-[#D4AF37] font-bold tracking-[0.3em] uppercase mt-3 text-xs md:text-base font-heading">
             & Trades Pvt Ltd
           </p>
         </div>
@@ -222,7 +222,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
             <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2 ml-4 sm:ml-6 md:ml-10`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
               <img src="/logo-main.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
               <div className="flex flex-col items-center justify-center -space-y-0.5 w-max">
-                <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.3em] md:tracking-[0.45em] ml-[0.3em] md:ml-[0.45em] bg-gradient-to-b from-[#F2DA91] via-[#D4AF37] to-[#8B6914] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-heading leading-none pt-1">MAYURA</span>
+                <span className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.3em] md:tracking-[0.45em] ml-[0.3em] md:ml-[0.45em] bg-gradient-to-b from-[#F2DA91] via-[#D4AF37] to-[#8B6914] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-heading leading-none pt-1">MAYURA</span>
                 <div className="flex items-center w-full gap-1 sm:gap-1.5 px-0.5">
                   <div className="h-[2px] flex-grow bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
                   <span className="text-[6px] sm:text-[8px] md:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[#D4AF37] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] font-heading leading-none whitespace-nowrap">FREIGHTS AND TRADES PVT. LTD.</span>
@@ -383,7 +383,7 @@ const InnerPageHeader = ({ title, subtitle, image }: { title: string; subtitle: 
       <div className="absolute inset-0 bg-gradient-to-r from-[#011C40]/70 via-[#023859]/40 to-transparent" />
     </div>
     <div className="relative z-10 flex flex-col justify-center flex-grow px-8 sm:px-12 md:px-20 lg:px-24 max-w-screen-2xl mx-auto w-full pt-28 md:pt-32">
-      <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-[1.1] max-w-3xl mb-3 sm:mb-4 drop-shadow-md font-heading">{title}</h1>
+      <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold text-white leading-[1.1] max-w-3xl mb-3 sm:mb-4 drop-shadow-md font-heading">{title}</h1>
       <p className="text-[#A7EBF2] text-sm sm:text-base md:text-lg max-w-2xl font-medium leading-relaxed border-l-4 border-[#D4AF37] pl-3 sm:pl-4 font-curvy">{subtitle}</p>
     </div>
   </div>
@@ -448,10 +448,10 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
           <Navbar currentPage="home" setCurrentPage={setCurrentPage} />
 
           <div className="relative z-10 flex flex-col justify-center flex-grow px-8 md:px-16 max-w-screen-2xl mx-auto w-full pt-12 md:pt-0">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] max-w-3xl mb-6 drop-shadow-lg font-heading">
+            <h1 className="text-4xl md:text-7xl font-extrabold text-white leading-[1.1] max-w-3xl mb-6 drop-shadow-lg font-heading">
               Smarter Transport. <br /> <span className="text-[#D4AF37]">Faster Deliveries.</span> <br /> Global Reach.
             </h1>
-            <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 font-medium leading-relaxed">
+            <p className="text-gray-300 text-base md:text-xl max-w-2xl mb-10 font-medium leading-relaxed">
               A technology-driven freight forwarding and foreign trade enterprise, delivering dependable and cost-efficient logistics solutions across South India and global markets.
             </p>
             <button onClick={() => setCurrentPage('services')} className="bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] hover:scale-105 px-8 py-4 rounded-full font-bold transition-all w-fit flex items-center gap-3 cursor-pointer shadow-lg shadow-[#D4AF37]/30">
@@ -462,9 +462,9 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
 
           <div className="relative z-10 flex flex-col md:flex-row items-end justify-between px-8 md:px-16 pb-12 max-w-screen-2xl mx-auto w-full gap-8">
             <div className="flex flex-wrap gap-12 md:gap-24">
-              <div><p className="text-4xl md:text-5xl font-extrabold text-white mb-2 font-heading">100<span className="text-[#D4AF37]">+</span></p><p className="text-[#54ACBF] text-sm font-medium leading-snug">Global Shipping<br />Destinations</p></div>
-              <div><p className="text-4xl md:text-5xl font-extrabold text-white mb-2 font-heading">24<span className="text-[#D4AF37]">/</span>7</p><p className="text-[#54ACBF] text-sm font-medium leading-snug">Real-Time<br />Tracking Visibility</p></div>
-              <div><p className="text-4xl md:text-5xl font-extrabold text-white mb-2 font-heading">100<span className="text-[#D4AF37]">%</span></p><p className="text-[#54ACBF] text-sm font-medium leading-snug">Secure Digital<br />Document Ops</p></div>
+              <div><p className="text-3xl md:text-5xl font-extrabold text-white mb-2 font-heading">100<span className="text-[#D4AF37]">+</span></p><p className="text-[#54ACBF] text-xs md:text-sm font-medium leading-snug">Global Shipping<br />Destinations</p></div>
+              <div><p className="text-3xl md:text-5xl font-extrabold text-white mb-2 font-heading">24<span className="text-[#D4AF37]">/</span>7</p><p className="text-[#54ACBF] text-xs md:text-sm font-medium leading-snug">Real-Time<br />Tracking Visibility</p></div>
+              <div><p className="text-3xl md:text-5xl font-extrabold text-white mb-2 font-heading">100<span className="text-[#D4AF37]">%</span></p><p className="text-[#54ACBF] text-xs md:text-sm font-medium leading-snug">Secure Digital<br />Document Ops</p></div>
             </div>
           </div>
         </div>
@@ -480,19 +480,19 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
             <img src="heroo.PNG" alt="Logistics" className="rounded-[2.5rem] shadow-2xl shadow-[#023859]/20 w-full h-[450px] object-cover border-8 border-[#023859]" />
           </div>
           <div className="flex flex-col justify-center">
-            <h2 className="text-4xl font-extrabold text-white mb-6 font-heading">Welcome to Mayura Freights</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 font-heading">Welcome to Mayura Freights</h2>
             <div className="min-h-[180px] mb-8">
               {activeTab === 'welcome' && (
                 <div className="animate-fade-in">
-                  <p className="text-[#A7EBF2]/80 text-lg mb-6 leading-relaxed">Mayura Freights & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p>
-                  <p className="text-[#A7EBF2]/80 text-lg leading-relaxed">Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p>
+                  <p className="text-[#A7EBF2]/80 text-base md:text-lg mb-6 leading-relaxed">Mayura Freights & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p>
+                  <p className="text-[#A7EBF2]/80 text-base md:text-lg leading-relaxed">Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p>
                 </div>
               )}
               {activeTab === 'reach' && (
                 <div className="animate-fade-in">
                   <h3 className="text-2xl font-bold text-[#D4AF37] mb-4 font-heading">Our Reach & Growth Plans</h3>
-                  <p className="text-[#A7EBF2]/80 text-lg mb-4 leading-relaxed">Headquartered in South India, Mayura Freight currently serves businesses across Karnataka, Tamil Nadu, Andhra Pradesh, Telangana, and Kerala.</p>
-                  <p className="text-[#A7EBF2]/80 text-lg leading-relaxed">With strategic partnerships and an expanding carrier network, we are scaling operations nationally and internationally to become a preferred logistics partner for exporters, importers, and domestic shippers.</p>
+                  <p className="text-[#A7EBF2]/80 text-base md:text-lg mb-4 leading-relaxed">Headquartered in South India, Mayura Freight currently serves businesses across Karnataka, Tamil Nadu, Andhra Pradesh, Telangana, and Kerala.</p>
+                  <p className="text-[#A7EBF2]/80 text-base md:text-lg leading-relaxed">With strategic partnerships and an expanding carrier network, we are scaling operations nationally and internationally to become a preferred logistics partner for exporters, importers, and domestic shippers.</p>
                 </div>
               )}
             </div>
@@ -510,8 +510,8 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
         {/* 3 SERVICES PREVIEW */}
         <ScrollReveal><section className="mb-32">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-white mb-4 font-heading">What We Do</h2>
-            <p className="text-[#A7EBF2]/80 max-w-2xl mx-auto text-lg font-curvy">Integrated air, ocean, and road freight services, customs clearance, and turnkey solutions.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 font-heading">What We Do</h2>
+            <p className="text-[#A7EBF2]/80 max-w-2xl mx-auto text-base md:text-lg font-curvy">Integrated air, ocean, and road freight services, customs clearance, and turnkey solutions.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -554,8 +554,8 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
           <div className="bg-[#011C40] rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl border border-[#D4AF37]/20">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none"></div>
             <div className="relative z-10 text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white font-heading">Why Choose Us</h2>
-              <p className="text-[#D4AF37] max-w-2xl mx-auto text-lg font-curvy">We optimize your entire supply chain with cutting-edge technology and regional expertise.</p>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-white font-heading">Why Choose Us</h2>
+              <p className="text-[#D4AF37] max-w-2xl mx-auto text-base md:text-lg font-curvy">We optimize your entire supply chain with cutting-edge technology and regional expertise.</p>
             </div>
             <div className="relative z-10 grid md:grid-cols-3 gap-8">
               <ScrollReveal delay={0} className="h-full"><div className="bg-[#023859]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20 shrink-0"><svg className="w-7 h-7 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" /><path d="M12 6v6l4 2" /></svg></div><h3 className="text-2xl font-bold mb-3 text-white font-heading">Regional Expertise, Global Reach</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">Deep understanding of South Indian supply chains combined with an expanding international network to support seamless import/export operations.</p></div></ScrollReveal>
@@ -573,8 +573,8 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
           <div className="bg-[#023859] rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl border border-[#D4AF37]/20">
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none"></div>
             <div className="relative z-10 text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white font-heading">Our Technology</h2>
-              <p className="text-[#A7EBF2] max-w-2xl mx-auto text-lg font-curvy">Mayura Freights is transforming freight forwarding with a proprietary, cloud-based platform that delivers:</p>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-white font-heading">Our Technology</h2>
+              <p className="text-[#A7EBF2] max-w-2xl mx-auto text-base md:text-lg font-curvy">Mayura Freights is transforming freight forwarding with a proprietary, cloud-based platform that delivers:</p>
             </div>
             <div className="relative z-10 grid md:grid-cols-3 gap-8">
               <ScrollReveal delay={0} className="h-full"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><h3 className="text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Real-time Tracking</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">End-to-end visibility across air, sea, and road shipments.</p></div></ScrollReveal>
@@ -588,8 +588,8 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
 
         {/* INDUSTRIES WE SERVE */}
         <ScrollReveal><section className="mb-32 text-center">
-          <h2 className="text-4xl font-extrabold text-white mb-4 font-heading">Industries We Serve</h2>
-          <p className="text-[#A7EBF2]/80 max-w-2xl mx-auto text-lg mb-12 font-curvy">We serve all industries, including comprehensive export and import solutions for:</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 font-heading">Industries We Serve</h2>
+          <p className="text-[#A7EBF2]/80 max-w-2xl mx-auto text-base md:text-lg mb-12 font-curvy">We serve all industries, including comprehensive export and import solutions for:</p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div className="bg-[#023859]/80 backdrop-blur-md rounded-[2rem] overflow-hidden shadow-2xl border border-[#26658C]/50 hover:border-[#D4AF37] hover:-translate-y-2 transition-all flex flex-col group"><div className="h-40 w-full overflow-hidden bg-[#011C40]"><img src="/manufacture.jpg" alt="Manufacturing & Industrial" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70" /></div><div className="p-8 flex flex-col items-center"><svg className="w-10 h-10 text-[#D4AF37] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" /></svg><h4 className="font-bold text-white text-lg text-center">Manufacturing & Industrial</h4></div></div>
             <div className="bg-[#023859]/80 backdrop-blur-md rounded-[2rem] overflow-hidden shadow-2xl border border-[#26658C]/50 hover:border-[#D4AF37] hover:-translate-y-2 transition-all flex flex-col group"><div className="h-40 w-full overflow-hidden bg-[#011C40]"><img src="/retails.jpg" alt="Retail & E-commerce" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70" /></div><div className="p-8 flex flex-col items-center"><svg className="w-10 h-10 text-[#D4AF37] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 0 1-8 0" /></svg><h4 className="font-bold text-white text-lg text-center">Retail & E-commerce</h4></div></div>
@@ -765,7 +765,7 @@ const SouthIndiaMap: React.FC = () => {
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 sm:mb-4 font-heading">
             Our South India Network
           </h3>
-          <p className="text-[#A7EBF2]/80 max-w-2xl mx-auto text-sm sm:text-base md:text-lg font-curvy">
+          <p className="text-[#A7EBF2]/80 max-w-2xl mx-auto text-xs sm:text-base md:text-lg font-curvy">
             Interactive map tracing the exact shapes of South India's states. Click a location or card to view contact information.
           </p>
         </div>
@@ -897,8 +897,8 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
 
             <div className="flex flex-col h-full">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white font-heading">Let's build your supply chain.</h2>
-              <p className="text-[#A7EBF2] text-lg mb-12 font-curvy">Whether you need global freights forwarding, reliable customs clearance, or turnkey sourcing services, our team is ready to assist you.</p>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-white font-heading">Let's build your supply chain.</h2>
+              <p className="text-[#A7EBF2] text-base md:text-lg mb-12 font-curvy">Whether you need global freights forwarding, reliable customs clearance, or turnkey sourcing services, our team is ready to assist you.</p>
 
               <div className="space-y-8 mb-16">
                 <div className="flex items-start gap-4">
