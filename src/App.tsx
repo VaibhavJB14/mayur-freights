@@ -221,7 +221,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
           <div className="flex items-center justify-between w-full md:w-auto">
             <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2 ml-4 sm:ml-6 md:ml-10`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
               <img src="/logo-main.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
-              <div className="flex flex-col items-center justify-center -space-y-0.5 w-max">
+              <div className="flex flex-col items-center justify-center -space-y-0.5">
                 <span className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.3em] md:tracking-[0.45em] ml-[0.3em] md:ml-[0.45em] bg-gradient-to-b from-[#F2DA91] via-[#D4AF37] to-[#8B6914] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-heading leading-none pt-1">MAYURA</span>
                 <div className="flex items-center w-full gap-1 sm:gap-1.5 px-0.5">
                   <div className="h-[2px] flex-grow bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
@@ -318,7 +318,7 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
         <div className="md:col-span-4 max-w-md mx-auto md:mx-0 text-center md:text-left flex flex-col items-center md:items-start">
           <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
             <img src="/logo-main.png" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain bg-[#011C40] rounded-xl p-1.5 border border-[#D4AF37]" />
-            <span className="text-xl md:text-2xl font-bold tracking-tight text-[#D4AF37] font-heading text-left whitespace-nowrap">Mayura Freights & Trades Pvt Ltd</span>
+            <span className="text-xl md:text-2xl font-bold tracking-tight text-[#D4AF37] font-heading text-center md:text-left">Mayura Freights & Trades Pvt Ltd</span>
           </div>
           <div className="w-full flex items-center justify-center gap-4 mt-6">
             <a href="#" className="p-3 bg-[#011C40] border border-[#26658C] rounded-full hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:-translate-y-1 transition-all duration-300 group shadow-[0_0_10px_rgba(38,101,140,0.3)]" aria-label="Instagram">
