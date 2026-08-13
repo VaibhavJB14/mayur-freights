@@ -109,7 +109,7 @@ const IntroOverlay = ({ onComplete }: { onComplete: () => void }) => {
       >
         <div className={`flex flex-col items-center justify-center transform transition-all duration-1000 ease-out ${isFadingOut ? 'scale-110 opacity-0' : 'scale-100 opacity-100 animate-fade-in-up'}`}>
           <img
-            src="/logo.png"
+            src="/loogo.png"
             alt="Mayura Logo"
             className="w-32 h-32 md:w-40 md:h-40 object-contain  mb-6 drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]"
           />
@@ -195,13 +195,22 @@ const ImageSlider = ({ images, title, delay = 0 }: { images: string[]; title: st
 const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [btnText, setBtnText] = useState('Get in touch');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    const interval = setInterval(() => {
+      setBtnText(prev => prev === 'Get in touch' ? 'MFT' : 'Get in touch');
+    }, 2000);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(interval);
+    };
   }, []);
 
   const navItems = [
@@ -220,7 +229,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
 
           <div className="flex items-center justify-between w-full md:w-auto">
             <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2 ml-4 sm:ml-6 md:ml-10`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
-              <img src="/logo-main.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
+              <img src="/loogo.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
               <div className="flex flex-col items-center justify-center -space-y-0.5">
                 <span className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.3em] md:tracking-[0.45em] ml-[0.3em] md:ml-[0.45em] bg-gradient-to-b from-[#F2DA91] via-[#D4AF37] to-[#8B6914] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-heading leading-none pt-1">MAYURA</span>
                 <div className="flex items-center w-full gap-1 sm:gap-1.5 px-0.5">
@@ -268,9 +277,9 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
           </div>
 
           <div className="hidden md:flex items-center shrink-0">
-            <button onClick={() => setCurrentPage('contact')} className="bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:scale-105 transition-all duration-300">
-              Get in touch
-              <svg className="w-4 h-4 bg-[#011C40]/20 rounded-full p-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            <button onClick={() => setCurrentPage('contact')} className="bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:scale-105 transition-all duration-300 w-[160px] whitespace-nowrap justify-center">
+              {btnText}
+              <svg className="w-4 h-4 bg-[#011C40]/20 rounded-full p-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </button>
           </div>
 
@@ -299,7 +308,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
                 }}
                 className="w-full bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] px-5 py-3 rounded-xl text-sm font-bold text-center mt-2 shadow-[0_0_15px_rgba(212,175,55,0.2)]"
               >
-                Get in touch
+                {btnText}
               </button>
             </div>
           </div>
@@ -317,7 +326,7 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
 
         <div className="md:col-span-4 max-w-md mx-auto md:mx-0 text-center md:text-left flex flex-col items-center md:items-start">
           <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
-            <img src="/logo-main.png" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain bg-[#011C40] rounded-xl p-1.5 border border-[#D4AF37]" />
+            <img src="/loogo.png" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain bg-[#011C40] rounded-xl p-1.5 border border-[#D4AF37]" />
             <span className="text-xl md:text-2xl font-bold tracking-tight text-[#D4AF37] font-heading text-center md:text-left">Mayura Freights & Trades Pvt Ltd</span>
           </div>
           <div className="w-full flex items-center justify-center gap-4 mt-6">
@@ -361,11 +370,11 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
         <div className="md:col-span-4">
           <h4 className="text-lg font-bold mb-6 text-white font-heading">Contact Details</h4>
           <p className="text-[#A7EBF2]/80 mb-4 leading-relaxed">For direct enquiries, request a quote, or operational support.</p>
-          <a href="mailto:info@mayurafreights.com" className="inline-block bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] hover:scale-105 px-8 py-3 rounded-full font-bold transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] mb-3 w-full text-center">
-            info@mayurafreights.com
+          <a href="mailto:Info@mayurafreight.com" className="inline-block bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] hover:scale-105 px-8 py-3 rounded-full font-bold transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] mb-3 w-full text-center">
+            Info@mayurafreight.com
           </a>
-          <a href="tel:+919876543210" className="inline-block bg-[#011C40] border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#011C40] px-8 py-3 rounded-full font-bold transition-colors w-full text-center">
-            +91-9876543210
+          <a href="tel:+919900942506" className="inline-block bg-[#011C40] border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#011C40] px-8 py-3 rounded-full font-bold transition-colors w-full text-center">
+            +91-9900942506
           </a>
         </div>
       </div>
@@ -690,8 +699,8 @@ const SouthIndiaMap: React.FC = () => {
       x: 478,
       y: 312,
       address: 'Mayura Freights & Trades Pvt Ltd, 5th Floor, Gold Towers, Residency Road, Bengaluru - 560025',
-      phone: '+91-80-45678901',
-      email: 'info@mayurafreights.com',
+      phone: '+91-9900942506',
+      email: 'Info@mayurafreight.com',
       hours: '9:00 AM - 6:00 PM (Mon-Sat)',
     },
     {
@@ -702,8 +711,8 @@ const SouthIndiaMap: React.FC = () => {
       x: 590,
       y: 305,
       address: 'Mayura Freights & Trades Pvt Ltd, Port View Chambers, Rajaji Salai, Chennai - 600001',
-      phone: '+91-44-23456789',
-      email: 'info@mayurafreights.com',
+      phone: '+91-9900942506',
+      email: 'Info@mayurafreight.com',
       hours: '9:00 AM - 6:00 PM (Mon-Sat)',
     },
     {
@@ -714,8 +723,8 @@ const SouthIndiaMap: React.FC = () => {
       x: 540,
       y: 125,
       address: 'Mayura Freights & Trades Pvt Ltd, Tech Park, Hitec City, Hyderabad - 500081',
-      phone: '+91-40-34567890',
-      email: 'info@mayurafreights.com',
+      phone: '+91-9900942506',
+      email: 'Info@mayurafreight.com',
       hours: '9:00 AM - 7:00 PM (Mon-Sat)',
     },
     {
@@ -726,8 +735,8 @@ const SouthIndiaMap: React.FC = () => {
       x: 415,
       y: 415,
       address: 'Mayura Freights & Trades Pvt Ltd, Maritime Plaza, Willingdon Island, Kochi - 682003',
-      phone: '+91-484-5678901',
-      email: 'info@mayurafreights.com',
+      phone: '+91-9900942506',
+      email: 'Info@mayurafreight.com',
       hours: '9:00 AM - 6:00 PM (Mon-Sat)',
     }
   ];
@@ -912,8 +921,8 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
                   <div className="bg-gradient-to-br from-[#D4AF37] to-[#FDE08B] p-4 rounded-xl shadow-lg shadow-[#D4AF37]/20"><svg className="w-6 h-6 text-[#011C40]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg></div>
                   <div>
                     <h4 className="text-xl font-bold mb-1 text-white font-heading">Direct Enquiries</h4>
-                    <p className="text-[#A7EBF2]/80">info@mayurafreights.com</p>
-                    <p className="text-[#A7EBF2]/80">+91-9876543210</p>
+                    <p className="text-[#A7EBF2]/80">Info@mayurafreight.com</p>
+                    <p className="text-[#A7EBF2]/80">+91-9900942506</p>
                   </div>
                 </div>
               </div>
