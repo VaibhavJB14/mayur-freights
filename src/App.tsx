@@ -113,12 +113,7 @@ const IntroOverlay = ({ onComplete }: { onComplete: () => void }) => {
             alt="Mayura Logo"
             className="w-32 h-32 md:w-40 md:h-40 object-contain  mb-6 drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]"
           />
-          <h1 className="text-2xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
-            Mayura Freights
-          </h1>
-          <p className="text-[#D4AF37] font-bold tracking-[0.3em] uppercase mt-3 text-xs md:text-base font-heading">
-            & Trades Pvt Ltd
-          </p>
+          <img src="/loga name.png" alt="Mayura Freights & Trades Pvt Ltd" className="h-16 md:h-24 object-contain mt-2" />
         </div>
 
         <div className="absolute bottom-20 z-10 text-[#D4AF37] font-bold text-lg">
@@ -195,21 +190,15 @@ const ImageSlider = ({ images, title, delay = 0 }: { images: string[]; title: st
 const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [btnText, setBtnText] = useState('Get in touch');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
-    
-    const interval = setInterval(() => {
-      setBtnText(prev => prev === 'Get in touch' ? 'MFT' : 'Get in touch');
-    }, 2000);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      clearInterval(interval);
     };
   }, []);
 
@@ -230,14 +219,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
           <div className="flex items-center justify-between w-full md:w-auto">
             <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2 ml-4 sm:ml-6 md:ml-10`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
               <img src="/loogo.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
-              <div className="flex flex-col items-center justify-center -space-y-0.5">
-                <span className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.3em] md:tracking-[0.45em] ml-[0.3em] md:ml-[0.45em] bg-gradient-to-b from-[#F2DA91] via-[#D4AF37] to-[#8B6914] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-heading leading-none pt-1">MAYURA</span>
-                <div className="flex items-center w-full gap-1 sm:gap-1.5 px-0.5">
-                  <div className="h-[2px] flex-grow bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
-                  <span className="text-[6px] sm:text-[8px] md:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[#D4AF37] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] font-heading leading-none whitespace-nowrap">FREIGHTS AND TRADES PVT. LTD.</span>
-                  <div className="h-[2px] flex-grow bg-gradient-to-l from-transparent to-[#D4AF37]"></div>
-                </div>
-              </div>
+              <img src="/loga name.png" alt="Mayura Freights & Trades Pvt Ltd" className="h-10 sm:h-14 md:h-16 object-contain" />
             </div>
 
             {/* Mobile Hamburger Button */}
@@ -278,7 +260,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
 
           <div className="hidden md:flex items-center shrink-0">
             <button onClick={() => setCurrentPage('contact')} className="bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:scale-105 transition-all duration-300 w-[160px] whitespace-nowrap justify-center">
-              {btnText}
+              Get in touch
               <svg className="w-4 h-4 bg-[#011C40]/20 rounded-full p-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </button>
           </div>
@@ -308,7 +290,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
                 }}
                 className="w-full bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] px-5 py-3 rounded-xl text-sm font-bold text-center mt-2 shadow-[0_0_15px_rgba(212,175,55,0.2)]"
               >
-                {btnText}
+                Get in touch
               </button>
             </div>
           </div>
@@ -327,7 +309,7 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
         <div className="md:col-span-4 max-w-md mx-auto md:mx-0 text-center md:text-left flex flex-col items-center md:items-start">
           <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
             <img src="/loogo.png" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain bg-[#011C40] rounded-xl p-1.5 border border-[#D4AF37]" />
-            <span className="text-xl md:text-2xl font-bold tracking-tight text-[#D4AF37] font-heading text-center md:text-left">Mayura Freights & Trades Pvt Ltd</span>
+            <img src="/loga name.png" alt="Mayura Freights & Trades Pvt Ltd" className="h-14 md:h-16 object-contain" />
           </div>
           <div className="w-full flex items-center justify-center gap-4 mt-6">
             <a href="#" className="p-3 bg-[#011C40] border border-[#26658C] rounded-full hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:-translate-y-1 transition-all duration-300 group shadow-[0_0_10px_rgba(38,101,140,0.3)]" aria-label="Instagram">
@@ -379,7 +361,7 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
         </div>
       </div>
       <div className="border-t border-[#26658C] pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[#54ACBF] text-sm font-medium">
-        <p>© 2026 Mayura Freights & Trades Pvt Ltd. All rights reserved.</p>
+        <p>© 2026 MAYURA FREIGHTS & TRADES PVT LTD. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -463,10 +445,15 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
             <p className="text-gray-300 text-base md:text-xl max-w-2xl mb-10 font-medium leading-relaxed">
               A technology-driven freight forwarding and foreign trade enterprise, delivering dependable and cost-efficient logistics solutions across South India and global markets.
             </p>
-            <button onClick={() => setCurrentPage('services')} className="bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] hover:scale-105 px-8 py-4 rounded-full font-bold transition-all w-fit flex items-center gap-3 cursor-pointer shadow-lg shadow-[#D4AF37]/30">
-              Explore Our Services
-              <span className="bg-[#011C40] text-[#D4AF37] rounded-full p-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
-            </button>
+            <div className="flex flex-wrap items-center gap-8">
+              <button onClick={() => setCurrentPage('services')} className="bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] hover:scale-105 px-8 py-4 rounded-full font-bold transition-all w-fit flex items-center gap-3 cursor-pointer shadow-lg shadow-[#D4AF37]/30">
+                Explore Our Services
+                <span className="bg-[#011C40] text-[#D4AF37] rounded-full p-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
+              </button>
+              <div className="bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] px-8 py-4 rounded-full font-bold transition-all w-fit shadow-lg shadow-[#D4AF37]/30 cursor-default select-none">
+                MFT
+              </div>
+            </div>
           </div>
 
           <div className="relative z-10 flex flex-col md:flex-row items-end justify-between px-8 md:px-16 pb-12 max-w-screen-2xl mx-auto w-full gap-8">
