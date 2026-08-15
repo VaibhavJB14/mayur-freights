@@ -218,7 +218,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
 
           <div className="flex items-center justify-between w-full md:w-auto">
             <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2 ml-4 sm:ml-6 md:ml-10`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
-              <img src="/loogo.png" alt="Mayura Logo" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
+              <img src="/loogo.png" alt="Mayura Logo" className="w-12 h-14 sm:w-12 sm:h-14 md:w-16 md:h-16 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
               <img src="/loga name.png" alt="Mayura Freights & Trades Pvt Ltd" className="h-10 sm:h-14 md:h-16 object-contain" />
             </div>
 
