@@ -218,8 +218,8 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
 
           <div className="flex items-center justify-between w-full md:w-auto">
             <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2 ml-4 sm:ml-6 md:ml-10`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
-              <img src="/loogo.png" alt="Mayura Logo" className="w-12 h-14 sm:w-12 sm:h-14 md:w-16 md:h-16 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
-              <img src="/loga name.png" alt="Mayura Freights & Trades Pvt Ltd" className="h-10 sm:h-14 md:h-16 object-contain" />
+              <img src="/loogo.png" alt="Mayura Logo" className="w-12 h-14 sm:w-12 sm:h-14 md:w-12 md:h-14 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
+              <img src="/loga name.png" alt="Mayura Freights & Trades Pvt Ltd" className="h-10 sm:h-12 md:h-14 object-contain" />
             </div>
 
             {/* Mobile Hamburger Button */}
@@ -439,21 +439,19 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
           <Navbar currentPage="home" setCurrentPage={setCurrentPage} />
 
           <div className="relative z-10 flex flex-col justify-center flex-grow px-8 md:px-16 max-w-screen-2xl mx-auto w-full pt-12 md:pt-0">
-            <h1 className="text-4xl md:text-7xl font-extrabold text-white leading-[1.1] max-w-3xl mb-6 drop-shadow-lg font-heading">
+            <h1 className="text-4xl md:text-7xl font-extrabold text-white leading-[1.1] max-w-3xl mb-6 mt-4 drop-shadow-lg font-heading">
               Smarter Transport. <br /> <span className="text-[#D4AF37]">Faster Deliveries.</span> <br /> Global Reach.
             </h1>
             <p className="text-gray-300 text-base md:text-xl max-w-2xl mb-10 font-medium leading-relaxed">
               A technology-driven freight forwarding and foreign trade enterprise, delivering dependable and cost-efficient logistics solutions across South India and global markets.
             </p>
-            <div className="flex flex-wrap items-center gap-8">
-              <button onClick={() => setCurrentPage('services')} className="bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] hover:scale-105 px-8 py-4 rounded-full font-bold transition-all w-fit flex items-center gap-3 cursor-pointer shadow-lg shadow-[#D4AF37]/30">
-                Explore Our Services
-                <span className="bg-[#011C40] text-[#D4AF37] rounded-full p-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
-              </button>
-              <div className="bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] px-8 py-4 rounded-full font-bold transition-all w-fit shadow-lg shadow-[#D4AF37]/30 cursor-default select-none">
-                MFT
-              </div>
-            </div>
+            <button onClick={() => setCurrentPage('services')} className="bg-gradient-to-r from-[#D4AF37] to-[#FDE08B] text-[#011C40] hover:scale-105 px-8 py-4 rounded-full font-bold transition-all w-full sm:w-fit flex items-center justify-center gap-3 cursor-pointer shadow-lg shadow-[#D4AF37]/30">
+              Explore Our Services
+              <span className="bg-[#011C40] text-[#D4AF37] rounded-full p-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
+            </button>
+
+            {/* <div className="hidden sm:block h-14 w-[1px] bg-gray-400/40"></div> */}
+
           </div>
 
           <div className="relative z-10 flex flex-col md:flex-row items-end justify-between px-8 md:px-16 pb-12 max-w-screen-2xl mx-auto w-full gap-8">
@@ -462,9 +460,16 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
               <div><p className="text-3xl md:text-5xl font-extrabold text-white mb-2 font-heading">24<span className="text-[#D4AF37]">/</span>7</p><p className="text-[#54ACBF] text-xs md:text-sm font-medium leading-snug">Real-Time<br />Tracking Visibility</p></div>
               <div><p className="text-3xl md:text-5xl font-extrabold text-white mb-2 font-heading">100<span className="text-[#D4AF37]">%</span></p><p className="text-[#54ACBF] text-xs md:text-sm font-medium leading-snug">Secure Digital<br />Document Ops</p></div>
             </div>
+            {/* <div className="flex flex-col sm:flex-row items-center gap-6 bg-[#011C40]/80 backdrop-blur-md border border-[#D4AF37] rounded-3xl p-3 pr-8 sm:pr-12 shadow-xl shadow-[#011C40]/50 w-fit"> */}
+
+            <div className="flex flex-col justify-center text-center sm:text-left">
+              <span className="font-extrabold text-5xl tracking-widest leading-none text-transparent" style={{ WebkitTextStroke: '2px #FDE08B' }}>MFT</span>
+              {/* <span className="text-gray-200 text-sm mt-1.5 tracking-wider">Move Forward Together</span> */}
+            </div>
           </div>
         </div>
       </div>
+      {/* </div > */}
 
       <main className="max-w-screen-xl mx-auto w-full flex-grow px-4">
 
