@@ -113,7 +113,7 @@ const IntroOverlay = ({ onComplete }: { onComplete: () => void }) => {
             alt="Mayura Logo"
             className="w-32 h-32 md:w-40 md:h-40 object-contain  mb-6 drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]"
           />
-          <img src="/loga name.png" alt="Mayura Freights & Trades Pvt Ltd" className="h-16 md:h-24 object-contain mt-2" />
+          <img src="/loga.png" alt="mayura freight & Trades Pvt Ltd" className="h-16 md:h-24 object-contain mt-2" />
         </div>
 
         <div className="absolute bottom-20 z-10 text-[#D4AF37] font-bold text-lg">
@@ -219,7 +219,7 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
           <div className="flex items-center justify-between w-full md:w-auto">
             <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2 ml-4 sm:ml-6 md:ml-10`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
               <img src="/loogo.png" alt="Mayura Logo" className="w-12 h-14 sm:w-12 sm:h-14 md:w-12 md:h-14 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
-              <img src="/loga name.png" alt="Mayura Freights & Trades Pvt Ltd" className="h-10 sm:h-12 md:h-14 object-contain" />
+              <img src="/loga.png" alt="Mayura Freight & Trades Pvt Ltd" className="h-10 sm:h-12 md:h-14 object-contain" />
             </div>
 
             {/* Mobile Hamburger Button */}
@@ -309,7 +309,7 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
         <div className="md:col-span-4 max-w-md mx-auto md:mx-0 text-center md:text-left flex flex-col items-center md:items-start">
           <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
             <img src="/loogo.png" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain bg-[#011C40] rounded-xl p-1.5 border border-[#D4AF37]" />
-            <img src="/loga name.png" alt="Mayura Freights & Trades Pvt Ltd" className="h-14 md:h-16 object-contain" />
+            <img src="/loga.png" alt="Mayura Freight & Trades Pvt Ltd" className="h-14 md:h-16 object-contain" />
           </div>
           <div className="w-full flex items-center justify-center gap-4 mt-6">
             <a href="#" className="p-3 bg-[#011C40] border border-[#26658C] rounded-full hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:-translate-y-1 transition-all duration-300 group shadow-[0_0_10px_rgba(38,101,140,0.3)]" aria-label="Instagram">
@@ -361,7 +361,7 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
         </div>
       </div>
       <div className="border-t border-[#26658C] pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[#54ACBF] text-sm font-medium">
-        <p>© 2026 MAYURA FREIGHTS & TRADES PVT LTD. All rights reserved.</p>
+        <p>© 2026 MAYURA FREIGHT & TRADES PVT LTD. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -481,11 +481,11 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
             <img src="heroo.PNG" alt="Logistics" className="rounded-[2.5rem] shadow-2xl shadow-[#023859]/20 w-full h-[450px] object-cover border-8 border-[#023859]" />
           </div>
           <div className="flex flex-col justify-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 font-heading">Welcome to Mayura Freights</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 font-heading">Welcome to Mayura Freight</h2>
             <div className="min-h-[180px] mb-8">
               {activeTab === 'welcome' && (
                 <div className="animate-fade-in">
-                  <p className="text-[#A7EBF2]/80 text-base md:text-lg mb-6 leading-relaxed">Mayura Freights & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p>
+                  <p className="text-[#A7EBF2]/80 text-base md:text-lg mb-6 leading-relaxed">Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p>
                   <p className="text-[#A7EBF2]/80 text-base md:text-lg leading-relaxed">Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p>
                 </div>
               )}
@@ -575,7 +575,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none"></div>
             <div className="relative z-10 text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-white font-heading">Our Technology</h2>
-              <p className="text-[#A7EBF2] max-w-2xl mx-auto text-base md:text-lg font-curvy">Mayura Freights is transforming freight forwarding with a proprietary, cloud-based platform that delivers:</p>
+              <p className="text-[#A7EBF2] max-w-2xl mx-auto text-base md:text-lg font-curvy">Mayura Freight is transforming freight forwarding with a proprietary, cloud-based platform that delivers:</p>
             </div>
             <div className="relative z-10 grid md:grid-cols-3 gap-8">
               <ScrollReveal delay={0} className="h-full"><div className="bg-[#011C40]/50 backdrop-blur-md p-8 rounded-[2rem] border border-[#26658C]/50 hover:bg-[#26658C]/40 transition-colors h-full flex flex-col"><h3 className="text-xl md:text-2xl font-bold mb-3 text-[#D4AF37] font-heading">Real-time Tracking</h3><p className="text-[#A7EBF2]/80 text-sm leading-relaxed">End-to-end visibility across air, sea, and road shipments.</p></div></ScrollReveal>
@@ -608,14 +608,14 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
 const AboutPage: React.FC<PageProps> = ({ setCurrentPage }) => (
   <>
     <div className="absolute top-0 w-full z-50"><Navbar currentPage="about" setCurrentPage={setCurrentPage} /></div>
-    <InnerPageHeader title="About Mayura Freights" subtitle="A dynamic, technology-driven freights forwarding and foreign trading company." image="/aboutt.png" />
+    <InnerPageHeader title="About Mayura Freight" subtitle="A dynamic, technology-driven freights forwarding and foreign trading company." image="/aboutt.png" />
     <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-16 md:mb-24">
         <div>
           <ScrollReveal direction="left" delay={0}><h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 font-heading">Who We Are</h2></ScrollReveal>
           <div className="border-l-4 border-[#D4AF37] pl-6 ml-2 overflow-hidden py-1">
-            <ScrollReveal direction="left" delay={150}><p className="text-[#A7EBF2]/80 text-base md:text-lg mb-6 leading-relaxed">Mayura Freights & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p></ScrollReveal>
-            <ScrollReveal direction="left" delay={300}><p className="text-[#A7EBF2]/80 text-base md:text-lg leading-relaxed">We specialize in integrated air, ocean, and road freight services, customs clearance, warehousing, and export & Import trading. Built on a foundation of integrity and customer-centric service, Mayura Freights combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p></ScrollReveal>
+            <ScrollReveal direction="left" delay={150}><p className="text-[#A7EBF2]/80 text-base md:text-lg mb-6 leading-relaxed">Mayura Freight & Trades Pvt. Ltd. is a dynamic, technology-driven freight forwarding and foreign trading company delivering reliable, cost-effective logistics solutions across South India and international markets.</p></ScrollReveal>
+            <ScrollReveal direction="left" delay={300}><p className="text-[#A7EBF2]/80 text-base md:text-lg leading-relaxed">We specialize in integrated air, ocean, and road freight services, customs clearance, warehousing, and export & Import trading. Built on a foundation of integrity and customer-centric service, Mayura Freight combines local expertise with global connectivity to simplify cross-border trade for businesses of every size.</p></ScrollReveal>
           </div>
         </div>
         <div className="bg-[#023859] rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden border border-[#D4AF37]/50">
@@ -690,7 +690,7 @@ const SouthIndiaMap: React.FC = () => {
       role: 'Corporate Headquarters',
       x: 478,
       y: 312,
-      address: 'Mayura Freights & Trades Pvt Ltd, 5th Floor, Gold Towers, Residency Road, Bengaluru - 560025',
+      address: 'Mayura Freight & Trades Pvt Ltd, 5th Floor, Gold Towers, Residency Road, Bengaluru - 560025',
       phone: '+91-9900942506',
       email: 'Info@mayurafreight.com',
       hours: '9:00 AM - 6:00 PM (Mon-Sat)',
@@ -702,7 +702,7 @@ const SouthIndiaMap: React.FC = () => {
       role: 'Maritime Logistics & Compliance Center',
       x: 590,
       y: 305,
-      address: 'Mayura Freights & Trades Pvt Ltd, Port View Chambers, Rajaji Salai, Chennai - 600001',
+      address: 'Mayura Freight & Trades Pvt Ltd, Port View Chambers, Rajaji Salai, Chennai - 600001',
       phone: '+91-9900942506',
       email: 'Info@mayurafreight.com',
       hours: '9:00 AM - 6:00 PM (Mon-Sat)',
@@ -714,7 +714,7 @@ const SouthIndiaMap: React.FC = () => {
       role: 'Inland Logistics & Technology Center',
       x: 540,
       y: 125,
-      address: 'Mayura Freights & Trades Pvt Ltd, Tech Park, Hitec City, Hyderabad - 500081',
+      address: 'Mayura Freight & Trades Pvt Ltd, Tech Park, Hitec City, Hyderabad - 500081',
       phone: '+91-9900942506',
       email: 'Info@mayurafreight.com',
       hours: '9:00 AM - 7:00 PM (Mon-Sat)',
@@ -726,7 +726,7 @@ const SouthIndiaMap: React.FC = () => {
       role: 'Coastal Logistics & Sourcing Gateway',
       x: 415,
       y: 415,
-      address: 'Mayura Freights & Trades Pvt Ltd, Maritime Plaza, Willingdon Island, Kochi - 682003',
+      address: 'Mayura Freight & Trades Pvt Ltd, Maritime Plaza, Willingdon Island, Kochi - 682003',
       phone: '+91-9900942506',
       email: 'Info@mayurafreight.com',
       hours: '9:00 AM - 6:00 PM (Mon-Sat)',
@@ -880,7 +880,7 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Inquiry sent successfully to Mayura Freights!');
+    alert('Inquiry sent successfully to Mayura Freight!');
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
@@ -889,7 +889,7 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
       <div className="absolute top-0 w-full z-50"><Navbar currentPage="contact" setCurrentPage={setCurrentPage} /></div>
       <InnerPageHeader
         title="Get in Touch"
-        subtitle="Partner with Mayura Freights & Trades Pvt Ltd. today for smarter, safer, and faster logistics."
+        subtitle="Partner with Mayura Freight & Trades Pvt Ltd. today for smarter, safer, and faster logistics."
         image="/contactt.png"
       />
       <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24 space-y-8 md:space-y-16">
