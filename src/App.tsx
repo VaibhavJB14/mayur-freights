@@ -109,11 +109,11 @@ const IntroOverlay = ({ onComplete }: { onComplete: () => void }) => {
       >
         <div className={`flex flex-col items-center justify-center transform transition-all duration-1000 ease-out ${isFadingOut ? 'scale-110 opacity-0' : 'scale-100 opacity-100 animate-fade-in-up'}`}>
           <img
-            src="/loogo.png"
+            src="/loogo.webp"
             alt="Mayura Logo"
             className="w-32 h-32 md:w-40 md:h-40 object-contain  mb-6 drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]"
           />
-          <img src="/loga.png" alt="mayura freight & Trades Pvt Ltd" className="h-16 md:h-24 object-contain mt-2" />
+          <img src="/loga.webp" alt="mayura freight & Trades Pvt Ltd" className="h-16 md:h-24 object-contain mt-2" />
         </div>
 
         <div className="absolute bottom-20 z-10 text-[#D4AF37] font-bold text-lg">
@@ -218,8 +218,8 @@ const Navbar: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
 
           <div className="flex items-center justify-between w-full md:w-auto">
             <div className={`flex items-center gap-3 shrink-0 cursor-pointer transition-all duration-300 py-2 ml-4 sm:ml-6 md:ml-10`} onClick={() => { setCurrentPage('home'); setMenuOpen(false); }}>
-              <img src="/loogo.png" alt="Mayura Logo" className="w-12 h-14 sm:w-12 sm:h-14 md:w-12 md:h-14 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
-              <img src="/loga.png" alt="Mayura Freight & Trades Pvt Ltd" className="h-10 sm:h-12 md:h-14 object-contain" />
+              <img src="/loogo.webp" alt="Mayura Logo" className="w-12 h-14 sm:w-12 sm:h-14 md:w-12 md:h-14 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
+              <img src="/loga.webp" alt="Mayura Freight & Trades Pvt Ltd" className="h-10 sm:h-12 md:h-14 object-contain" />
             </div>
 
             {/* Mobile Hamburger Button */}
@@ -308,8 +308,8 @@ const Footer: React.FC<PageProps> = ({ setCurrentPage }) => (
 
         <div className="md:col-span-4 max-w-md mx-auto md:mx-0 text-center md:text-left flex flex-col items-center md:items-start">
           <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
-            <img src="/loogo.png" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain bg-[#011C40] rounded-xl p-1.5 border border-[#D4AF37]" />
-            <img src="/loga.png" alt="Mayura Freight & Trades Pvt Ltd" className="h-14 md:h-16 object-contain" />
+            <img src="/loogo.webp" alt="Mayura Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain bg-[#011C40] rounded-xl p-1.5 border border-[#D4AF37]" />
+            <img src="/loga.webp" alt="Mayura Freight & Trades Pvt Ltd" className="h-14 md:h-16 object-contain" />
           </div>
           <div className="w-full flex items-center justify-center gap-4 mt-6">
             <a href="#" className="p-3 bg-[#011C40] border border-[#26658C] rounded-full hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:-translate-y-1 transition-all duration-300 group shadow-[0_0_10px_rgba(38,101,140,0.3)]" aria-label="Instagram">
@@ -431,7 +431,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
         <div className="relative rounded-[2.5rem] md:rounded-[3rem] overflow-hidden min-h-[85vh] flex flex-col bg-[#011C40] shadow-2xl border border-[#26658C]/30">
           <div className="absolute inset-0 z-0">
             <div className="w-full h-full opacity-40 mix-blend-overlay">
-              <img src="hero3.png" alt="Logistics Operations" className="w-full h-full object-cover" />
+              <img src="hero3.webp" alt="Logistics Operations" className="w-full h-full object-cover" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-[#011C40] via-[#023859]/10 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011C40] via-transparent to-transparent opacity-90" />
@@ -478,7 +478,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
             <div className="absolute -top-6 -left-6 bg-[#023859] text-[#D4AF37] p-4 rounded-2xl z-10 shadow-lg shadow-[#D4AF37]/20 border border-[#D4AF37]/50">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" /></svg>
             </div>
-            <img src="heroo.PNG" alt="Logistics" className="rounded-[2.5rem] shadow-2xl shadow-[#023859]/20 w-full h-[450px] object-cover border-8 border-[#023859]" />
+            <img src="heroo.webp" alt="Logistics" className="rounded-[2.5rem] shadow-2xl shadow-[#023859]/20 w-full h-[450px] object-cover border-8 border-[#023859]" />
           </div>
           <div className="flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 font-heading">Welcome to Mayura Freight</h2>
@@ -517,7 +517,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Freight Forwarding', images: ['    FF1.png ', '    FF2.jpg ', '   FF3.jpg'], desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
+              { title: 'Freight Forwarding', images: ['    FF1.webp ', '    FF2.jpg ', '   FF3.jpg'], desc: 'Customized sea freight, air freight, and road freight services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
               { title: 'Customs Clearance & Compliance', images: ['    ccc1.jpeg ', '    ccc2.jpeg ', '   ccc3.jpeg'], desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements across jurisdictions.', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
               { title: 'Warehousing & Distribution', images: ['  wd1.jpeg   ', '    wd2.jpeg ', 'wd3.jpeg'], desc: 'Secure, strategically located warehousing, inventory management, pick-and-pack services, and last-mile distribution to support lean supply chains and timely deliveries.', icon: <><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></> }
             ].map((srv, idx) => (
@@ -608,7 +608,7 @@ const HomePage: React.FC<PageProps> = ({ setCurrentPage }) => {
 const AboutPage: React.FC<PageProps> = ({ setCurrentPage }) => (
   <>
     <div className="absolute top-0 w-full z-50"><Navbar currentPage="about" setCurrentPage={setCurrentPage} /></div>
-    <InnerPageHeader title="About Mayura Freight" subtitle="A dynamic, technology-driven freights forwarding and foreign trading company." image="/aboutt.png" />
+    <InnerPageHeader title="About Mayura Freight" subtitle="A dynamic, technology-driven freights forwarding and foreign trading company." image="/aboutt.webp" />
     <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-16 md:mb-24">
         <div>
@@ -637,7 +637,7 @@ const AboutPage: React.FC<PageProps> = ({ setCurrentPage }) => (
 const ServicesPage: React.FC<PageProps> = ({ setCurrentPage }) => (
   <>
     <div className="absolute top-0 w-full z-50"><Navbar currentPage="services" setCurrentPage={setCurrentPage} /></div>
-    <InnerPageHeader title="What We Do" subtitle="Comprehensive multimodal integrated freights forwarding, customs clearance, warehousing, and turnkey sourcing solutions." image="/services.png" />
+    <InnerPageHeader title="What We Do" subtitle="Comprehensive multimodal integrated freights forwarding, customs clearance, warehousing, and turnkey sourcing solutions." image="/services.webp" />
     <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-extrabold text-white mb-4 font-heading">Complete Logistics Network</h2>
@@ -645,12 +645,12 @@ const ServicesPage: React.FC<PageProps> = ({ setCurrentPage }) => (
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { title: 'Freights Forwarding', images: ['/FF1.png', 'FF2.jpg', 'FF3.jpg'], desc: 'Customized sea freights, air freights, and road freights services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
+          { title: 'Freights Forwarding', images: ['/FF1.webp', 'FF2.jpg', 'FF3.jpg'], desc: 'Customized sea freights, air freights, and road freights services optimized for speed, cost, and reliability. We manage full container loads (FCL), less-than-container loads (LCL), air cargo, and multimodal shipments to and from major global trade lanes.', icon: <><path d="M2 21h20M19.3 14.8C21.1 13.5 22 11.7 22 10V4h-3v3H5V4H2v6c0 1.7.9 3.5 2.7 4.8L2 18h20l-2.7-3.2ZM12 7v7" /></> },
           { title: 'Customs Clearance & Compliance', images: ['/ccc1.jpeg', 'ccc2.jpeg', 'ccc3.jpeg'], desc: 'End-to-end customs brokerage and documentation services, including import/export documentation, HS code classification, duty optimization, and compliance with regulatory requirements across jurisdictions.', icon: <><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></> },
           { title: 'Warehousing & Distribution', images: ['/wd1.jpeg', 'wd2.jpeg', 'wd3.jpeg'], desc: 'Secure, strategically located warehousing, inventory management, pick-and-pack services, and last-mile distribution to support lean supply chains and timely deliveries.', icon: <><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></> },
           { title: 'End-to-End Logistics Solutions', images: ['/end-to-end.jpg', 'ete2.jpeg', 'ete3.jpeg'], desc: 'Integrated supply chain management, multimodal transportation planning, vendor coordination, and reverse logistics to reduce lead times and lower total landed cost.', icon: <><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><circle cx="12" cy="12" r="4" /></> },
-          { title: 'Export Trading', images: ['/et1.jpeg', 'et2.jpg', 'et3.png'], desc: 'Provides comprehensive export services for all product categories, leveraging our direct partnerships with manufacturers in China. We specialize in exporting from India, importing from China and Europe, and connecting global buyers with trusted manufacturers.', icon: <><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></> },
-          { title: 'Turnkey Sourcing Solutions', images: ['/tss1.jpg', 'tss2.png', 'tss3.png'], desc: 'We are specialized in the end-to-end process—from sourcing the product to moving it on our own freights. From any product you need, we deliver complete turnkey solutions—from procurement, quality control, and pricing to packaging, documentation, and shipment using our freights capabilities. Our manufacturer network ensures reliable sourcing, competitive pricing, and seamless cross-border trade across India, China, and Europe.', icon: <><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></> },
+          { title: 'Export Trading', images: ['/et1.jpeg', 'et2.jpg', 'et3.webp'], desc: 'Provides comprehensive export services for all product categories, leveraging our direct partnerships with manufacturers in China. We specialize in exporting from India, importing from China and Europe, and connecting global buyers with trusted manufacturers.', icon: <><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Zm0 0v-5" /></> },
+          { title: 'Turnkey Sourcing Solutions', images: ['/tss1.jpg', 'tss2.webp', 'tss3.webp'], desc: 'We are specialized in the end-to-end process—from sourcing the product to moving it on our own freights. From any product you need, we deliver complete turnkey solutions—from procurement, quality control, and pricing to packaging, documentation, and shipment using our freights capabilities. Our manufacturer network ensures reliable sourcing, competitive pricing, and seamless cross-border trade across India, China, and Europe.', icon: <><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></> },
         ].map((srv, idx) => (
           <div key={idx} onClick={() => setCurrentPage('contact')} className="group relative h-[480px] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl border border-[#26658C]/50 hover:border-[#D4AF37]/50 hover:scale-[1.02] transition-transform duration-500">
             <ImageSlider images={srv.images} title={srv.title} delay={idx * 20} />
@@ -890,7 +890,7 @@ const ContactPage: React.FC<PageProps> = ({ setCurrentPage }) => {
       <InnerPageHeader
         title="Get in Touch"
         subtitle="Partner with Mayura Freight & Trades Pvt Ltd. today for smarter, safer, and faster logistics."
-        image="/contactt.png"
+        image="/contactt.webp"
       />
       <main className="max-w-screen-xl mx-auto w-full flex-grow px-4 py-12 md:py-24 space-y-8 md:space-y-16">
 
